@@ -1,24 +1,8 @@
-# README
+The purpose of this project is to create an application that allows users to answer questions and score points, and administrators to compile lists of questions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Entity
+1. User
+1. Test
+1. Question
+1. Answer
+1. Result
