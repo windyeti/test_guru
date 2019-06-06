@@ -1,3 +1,6 @@
 class Test < ApplicationRecord
-  belongs_to :category
+  def self.test_in_category(category)
+    category = Category.find_by_title(category)
+    Test.where('category_id == ?', category.id)
+  end
 end
