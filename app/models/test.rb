@@ -1,6 +1,9 @@
 class Test < ApplicationRecord
-  def self.test_in_category(category)
-    category = Category.find_by_title(category)
-    Test.where('category_id == ?', category.id)
+  def self.tests_in_category(category)
+    Test
+      .joins("JOIN categories ON tests.category_id = categories.id")
+      .where("categories.title = ?", category)
+      .order(id: :desc)
+      .pluck(:title)
   end
 end
