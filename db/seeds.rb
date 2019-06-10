@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# ActiveRecord::Base.connection.execute("ALTER SEQUENCE answers_id_seq RESTART WITH 1")
+
 def parent_category(list, hash)
   key = hash.keys.first.to_sym
   objs = list.select do |i|
@@ -14,15 +16,17 @@ def parent_category(list, hash)
   objs.first.id
 end
 
+users = User.create!([{name: 'Egor', email: 'egor@mail.ru'}, {name: 'Jora', email: 'jora@mail.ru'}])
+
 categories = Category.create!([{title: 'Frontend'}, {title: 'Backend'}, {title: 'WEB'}])
 tests = Test.create!([
-    {title: 'HTML', level: 1, category_id: parent_category(categories, title: 'Frontend')},
-    {title: 'CSS', level: 2, category_id: parent_category(categories, title: 'Frontend')},
-    {title: 'JS', level: 3, category_id: parent_category(categories, title: 'Frontend')},
-    {title: 'Query', level: 2, category_id: parent_category(categories, title: 'Frontend')},
-    {title: 'Ruby', level: 3, category_id: parent_category(categories, title: 'Backend')},
-    {title: 'RubyOnRails', category_id: parent_category(categories, title: 'Backend')},
-    {title: 'HTTP', level: 1, category_id: parent_category(categories, title: 'WEB')}
+    {title: 'HTML', level: 1, user_id: users[0].id, category_id: parent_category(categories, title: 'Frontend')},
+    {title: 'CSS', level: 2, user_id: users[0].id, category_id: parent_category(categories, title: 'Frontend')},
+    {title: 'JS', level: 3, user_id: users[0].id, category_id: parent_category(categories, title: 'Frontend')},
+    {title: 'Query', level: 2, user_id: users[0].id, category_id: parent_category(categories, title: 'Frontend')},
+    {title: 'Ruby', level: 3, user_id: users[1].id, category_id: parent_category(categories, title: 'Backend')},
+    {title: 'RubyOnRails', level: 3, user_id: users[1].id, category_id: parent_category(categories, title: 'Backend')},
+    {title: 'HTTP', level: 1, user_id: users[1].id, category_id: parent_category(categories, title: 'WEB')}
   ])
 
 questions = Question.create!([
