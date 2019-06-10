@@ -96,3 +96,15 @@ answers = Answer.create!([
     {body: 'Старый обряд', question_id: parent_category(questions, body: 'HTTP это...(2)')},
     {body: 'Протокол передачи гипертекста', question_id: parent_category(questions, body: 'HTTP это...(2)')}
   ])
+
+TestsUser.create!([
+    {user_id: users[0].id, test_id: 1},
+    {user_id: users[0].id, test_id: 2},
+    {user_id: users[0].id, test_id: 3},
+    {user_id: users[0].id, test_id: 4},
+    {user_id: users[0].id, test_id: 5},
+    {user_id: users[1].id, test_id: 3},
+    {user_id: users[1].id, test_id: 4},
+    {user_id: users[1].id, test_id: 5},
+    {user_id: users[1].id, test_id: 6},
+  ])
