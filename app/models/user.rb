@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: "Test"
 
   def list_test_user(level)
-    tests.where("tests.level = :level", {level: level})
+    tests.where(level: level)
   end
 end
