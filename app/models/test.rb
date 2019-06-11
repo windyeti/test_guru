@@ -8,9 +8,13 @@ class Test < ApplicationRecord
   has_many :users, through: :tests_users
 
   def self.tests_in_category(category)
-    joins(:category).where("categories.title = :category", {category: category})
+    joins(:category).where(categories: {title: category})
         .order(id: :desc)
         .pluck(:title)
+
+    # joins(:category).where("categories.title = :category", {category: category})
+    #     .order(id: :desc)
+    #     .pluck(:title)
 
     # Category.where("categories.title = ?", category).first
     #   .tests
