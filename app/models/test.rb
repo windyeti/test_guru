@@ -7,27 +7,17 @@ class Test < ApplicationRecord
   has_many :tests_users, dependent: :destroy
   has_many :users, through: :tests_users
 
-  def self.tests_in_category(category)
-    joins(:category).where(categories: {title: category})
-        .order(id: :desc)
-        .pluck(:title)
+  scope :tests_beginer, -> { where(level: 0..1) }
+  scope :tests_middle, -> { where(level: 2..4) }
+  scope :tests_master, -> { where(level: 5..Float::INFINITY) }
+  scope :tests_in_category, -> (category) { joins(:category)
+                                            .where(categories: {title: category})
+                                            .order(id: :desc)
+                                            .pluck(:title) }
 
-    # joins(:category).where("categories.title = :category", {category: category})
-    #     .order(id: :desc)
-    #     .pluck(:title)
-
-    # Category.where("categories.title = ?", category).first
-    #   .tests
-    #   .order(id: :desc)
-    #   .pluck(:title)
-    #
-    # joins("JOIN categories ON tests.category_id = categories.id")
-    #     .where("categories.title = ?", category)
-    #     .order(id: :desc)
-    #     .pluck(:title)
-
-    # joins(:category).where(categories: {title: "Frontend"})
-    #     .order(id: :desc)
-    #     .pluck(:title)
-  end
+  # def self.tests_in_category(category)
+  #   joins(:category).where(categories: {title: category})
+  #       .order(id: :desc)
+  #       .pluck(:title)
+  # end
 end

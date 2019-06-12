@@ -4,6 +4,14 @@ class User < ApplicationRecord
 
   has_many :created_tests, class_name: "Test"
 
+  # scope :list_test_user, -> (options) do
+  #   options[:self].tests.where(level: options[:level])
+  # end
+  #
+  # def list_test_user(level)
+  #   self.class.list_test_user(level: level, self: self)
+  # end
+
   def list_test_user(level)
     tests.where(level: level)
   end
