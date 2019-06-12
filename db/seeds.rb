@@ -108,3 +108,4 @@ TestsUser.create!([
     {user_id: users[1].id, test_id: 5},
     {user_id: users[1].id, test_id: 6},
   ])
+

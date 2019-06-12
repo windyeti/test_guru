@@ -15,9 +15,11 @@ class Test < ApplicationRecord
                                             .order(id: :desc)
                                             .pluck(:title) }
 
-  # def self.tests_in_category(category)
-  #   joins(:category).where(categories: {title: category})
-  #       .order(id: :desc)
-  #       .pluck(:title)
-  # end
+  validates :title, presence: true
+  validates :level, numericality: { greater_than: 0, only_integer: true }
+  validate :validate_uniq_title_level
+
+  def validate_uniq_title_level
+    errors.add(:uniq_title_level, "Pair title_level must be uniqueness!") if Test.exists?(title: title, level: level)
+  end
 end

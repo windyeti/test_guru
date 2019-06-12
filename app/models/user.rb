@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   has_many :created_tests, class_name: "Test"
 
+  validates :email, presence: true
+
   # scope :list_test_user, -> (options) do
   #   options[:self].tests.where(level: options[:level])
   # end
