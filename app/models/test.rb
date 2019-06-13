@@ -12,14 +12,12 @@ class Test < ApplicationRecord
   scope :tests_master, -> { where(level: 5..Float::INFINITY) }
   scope :tests_in_category, -> (category) { joins(:category)
                                             .where(categories: {title: category})
-                                            .order(id: :desc)
-                                            .pluck(:title) }
+                                            .order(id: :desc) }
+  def self.title_category(category)
+    tests_in_category(category).pluck(:title)
+  end
 
   validates :title, presence: true
   validates :level, numericality: { greater_than: 0, only_integer: true }
-  validate :validate_uniq_title_level
-
-  def validate_uniq_title_level
-    errors.add(:uniq_title_level, "Pair title_level must be uniqueness!") if Test.exists?(title: title, level: level)
-  end
+  validates :title, uniqueness: { scope: :level, message: "Pair title_level must be uniqueness!" }
 end
