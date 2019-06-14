@@ -10,11 +10,11 @@ class Test < ApplicationRecord
   scope :tests_beginer, -> { where(level: 0..1) }
   scope :tests_middle, -> { where(level: 2..4) }
   scope :tests_master, -> { where(level: 5..Float::INFINITY) }
-  scope :tests_in_category, -> (category) { joins(:category)
-                                            .where(categories: {title: category})
-                                            .order(id: :desc) }
-  def self.title_category(category)
-    tests_in_category(category).pluck(:title)
+  scope :with_category, -> (category) { joins(:category)
+                                        .where(categories: { title: category })
+                                        .order(id: :desc) }
+  def self.titles_category(category)
+    with_category(category).pluck(:title)
   end
 
   validates :title, presence: true
