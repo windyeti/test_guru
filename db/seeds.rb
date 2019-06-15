@@ -98,13 +98,13 @@ answers = Answer.create!([
   ])
 
 TestsUser.create!([
-    {user_id: users[0].id, test_id: 1},
-    {user_id: users[0].id, test_id: 2},
-    {user_id: users[0].id, test_id: 3},
-    {user_id: users[0].id, test_id: 4},
-    {user_id: users[0].id, test_id: 5},
-    {user_id: users[1].id, test_id: 3},
-    {user_id: users[1].id, test_id: 4},
-    {user_id: users[1].id, test_id: 5},
-    {user_id: users[1].id, test_id: 6},
+    {user_id: users[0].id, test_id: tests[1].id},
+    {user_id: users[0].id, test_id: tests[2].id},
+    {user_id: users[0].id, test_id: tests[3].id},
+    {user_id: users[0].id, test_id: tests[4].id},
+    {user_id: users[0].id, test_id: tests[5].id},
+    {user_id: users[1].id, test_id: tests[3].id},
+    {user_id: users[1].id, test_id: tests[4].id},
+    {user_id: users[1].id, test_id: tests[5].id},
+    {user_id: users[1].id, test_id: tests[6].id}
   ])
