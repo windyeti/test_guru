@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, except: [:show, :destroy, :update, :edit]
+  before_action :find_test, only: [:index, :create, :new]
   before_action :find_question, only: [:show, :destroy]
 
-  helper_method :current_test_id
+  # helper_method :current_test_id
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -15,11 +15,10 @@ class QuestionsController < ApplicationController
     render plain: @question.body
   end
 
-  def new
-  end
+  def new; end
 
   def create
-    question = Question.create(question_params)
+    question = @test.questions.create(question_params)
     render plain: question.body
   end
 
@@ -28,9 +27,9 @@ class QuestionsController < ApplicationController
     render plain: "Question was destroyed"
   end
 
-  def current_test_id
-    @test.id
-  end
+  # def current_test_id
+  #   @test.id
+  # end
 
   private
 
@@ -38,7 +37,7 @@ class QuestionsController < ApplicationController
     render plain: "Question not found!!!"
   end
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def find_question
