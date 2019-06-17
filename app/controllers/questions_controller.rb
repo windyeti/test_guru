@@ -2,8 +2,6 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: [:index, :create, :new]
   before_action :find_question, only: [:show, :destroy]
 
-  # helper_method :current_test_id
-
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
@@ -26,10 +24,6 @@ class QuestionsController < ApplicationController
     @question.destroy
     render plain: "Question was destroyed"
   end
-
-  # def current_test_id
-  #   @test.id
-  # end
 
   private
 
