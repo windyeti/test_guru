@@ -1,9 +1,8 @@
-<h1>Test <%= @test.title %></h1>
-<p>Это тест уровня <%= @test.level %></p>
-<%= render partial: "/questions/list_question_of_test" %>
+<h1>Test Edit</h1>
+<%= render partial: 'form' %>
 <p>
   | <%= link_to "Delete", question_path(@test), method: :delete,
                 data: {confirm: "Are you sure?\nПодтверждение на удаление #{@test.title}"} %> |
+  | <%= link_to "Тест", test_path(@test) %> |
   | <%= link_to 'Все тесты', tests_path %> |
-  | <%= link_to 'Создать вопрос', new_test_question_path(@test) %> |
 </p>

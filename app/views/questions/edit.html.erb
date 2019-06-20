@@ -3,7 +3,6 @@
 <p>
   | <%= link_to "Delete", question_path(@question), method: :delete,
                 data: {confirm: "Are you sure?\nПодтверждение на удаление #{@question.body}"} %> |
-  | <%= link_to "Все вопросы теста", test_questions_path(@question.test) %> |
   | <%= link_to "Тест", test_path(@question.test) %> |
   | <%= link_to 'Все тесты', tests_path %> |
 </p>

@@ -22,12 +22,11 @@
     <% end %>
   </table>
 
-  <p>
-    | <%= link_to "Создать новый вопрос", new_test_question_path(@test) %> |
-    | <%= link_to 'Все тесты', tests_path %> |
-    | <%= link_to "Тест", test_path(@test) unless params[:controller] == "tests" %> |
-    | <%= link_to "Вопросы к тесту", test_questions_path(@test) unless params[:controller] == "questions" %> |
-  </p>
+<!--  <p>-->
+<!--    | <%#= link_to "Создать новый вопрос", new_test_question_path(@test) %> |-->
+<!--    | <%#= link_to 'Все тесты', tests_path %> |-->
+<!--    | <%#= link_to "Тест", test_path(@test) unless params[:controller] == "tests" %> |-->
+<!--  </p>-->
 <% else %>
   <p>This test has no questions.</p>
 <% end %>
