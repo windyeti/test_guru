@@ -1,29 +1,33 @@
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Сам вопрос</th>
-    <th>Из теста</th>
-    <th>Сложность</th>
-    <th colspan="3">Actions</th>
-  </tr>
-  <% @test.questions.each do |question| %>
+<% if @test.questions.present? %>
+  <table>
     <tr>
-      <td> <%= question.id %> </td>
-      <td> <%= question.body %> </td>
-      <td> <%= question.test.title %> </td>
-      <td> <%= question.test.level %> </td>
-      <td> | <%= link_to "Show", question_path(question) %> | </td>
-      <td> | <%= link_to "Edit", edit_question_path(question) %> | </td>
-      <td> | <%= link_to "Delete", question_path(question, current_model: params[:controller]),
-                method: :delete, data: {confirm: "Are you sure?
-                \nПодтверждение на удаление #{question.body}"} %> | </td>
+      <th>ID</th>
+      <th>Сам вопрос</th>
+      <th>Из теста</th>
+      <th>Сложность</th>
+      <th colspan="3">Actions</th>
     </tr>
-  <% end %>
-</table>
+    <% @test.questions.each do |question| %>
+      <tr>
+        <td> <%= question.id %> </td>
+        <td> <%= question.body %> </td>
+        <td> <%= question.test.title %> </td>
+        <td> <%= question.test.level %> </td>
+        <td> | <%= link_to "Show", question_path(question) %> | </td>
+        <td> | <%= link_to "Edit", edit_question_path(question) %> | </td>
+        <td> | <%= link_to "Delete", question_path(question, current_model: params[:controller]),
+                  method: :delete, data: {confirm: "Are you sure?
+                  \nПодтверждение на удаление #{question.body}"} %> | </td>
+      </tr>
+    <% end %>
+  </table>
 
-<p>
-  | <%= link_to "Создать новый вопрос", new_test_question_path(@test) %> |
-  | <%= link_to 'Все тесты', tests_path %> |
-  | <%= link_to "Тест", test_path(@test) unless params[:controller] == "tests" %> |
-  | <%= link_to "Вопросы к тесту", test_questions_path(@test) unless params[:controller] == "questions" %> |
-</p>
+  <p>
+    | <%= link_to "Создать новый вопрос", new_test_question_path(@test) %> |
+    | <%= link_to 'Все тесты', tests_path %> |
+    | <%= link_to "Тест", test_path(@test) unless params[:controller] == "tests" %> |
+    | <%= link_to "Вопросы к тесту", test_questions_path(@test) unless params[:controller] == "questions" %> |
+  </p>
+<% else %>
+  <p>This test has no questions.</p>
+<% end %>

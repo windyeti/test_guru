@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
     if question.save
       redirect_to question_path(question)
     else
+      @question = Question.new
       render :new
     end
   end
@@ -24,7 +25,7 @@ class QuestionsController < ApplicationController
   def edit; end
 
   def update
-    if @question.update_attributes(question_params)
+    if @question.update(question_params)
       redirect_to question_path(@question)
     else
       render :edit

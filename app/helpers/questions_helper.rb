@@ -1,11 +1,11 @@
 module QuestionsHelper
   def question_header(options)
-    if params[:action] == 'new'
-      title = options[:test].title
-      "Create New #{title} Question"
-    elsif params[:action] == 'edit'
+    if options[:test].nil?
       title = options[:question].test.title
       "Edit #{title} Question"
+    else
+      title = options[:test].title
+      "Create New #{title} Question"
     end
   end
 end
