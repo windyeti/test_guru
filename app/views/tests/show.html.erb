@@ -1,2 +1,3 @@
-<h1>Tests#show</h1>
-<p>Find me in app/views/tests/show.html.erb</p>
+<h1>Test <%= @test.title %></h1>
+<p>Это тест уровня <%= @test.level %></p>
+<%= render partial: "/shared/list_question_of_test" %>

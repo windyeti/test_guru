@@ -1,11 +1,7 @@
-<h1>New Question</h1>
-<form action="/tests/<%= params[:test_id] %>/questions" method="post" >
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <div>
-    <label for="question-body">Тело вопроса</label>
-    <input type="text" name="question[body]" id="question-body">
-  </div>
-  <div>
-    <input type="submit">
-  </div>
-</form>
+<%= render partial: "form", locals: {value_submit: "Создать"} %>
+
+<p>
+  | <%= link_to "Все вопросы теста", test_questions_path(@test) %> |
+  | <%= link_to "Тест", test_path(@test) %> |
+  | <%= link_to 'Все тесты', tests_path %> |
+</p>

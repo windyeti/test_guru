@@ -1,0 +1,8 @@
+<h1><%= question_header(test: @test, question: @question) %></h1>
+<%= form_with(model: [@test, @question]) do |f|%>
+  <div>
+    <%= f.label(:body, 'Тело вопроса') %>
+    <%= f.text_field(:body) %>
+  </div>
+  <%= f.submit(value_submit) %>
+<% end %>
