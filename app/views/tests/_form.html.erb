@@ -1,4 +1,13 @@
-<%= form_with model: @test do |f| %>
+<% if @test.errors.present? %>
+  <h3>Errors</h3>
+  <ul>
+    <% @test.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_with(model: @test, local: true) do |f| %>
   <p>
     <%= f.label(:title) %>
     <%= f.text_field(:title) %>
