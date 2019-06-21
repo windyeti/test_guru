@@ -11,5 +11,21 @@
 
   <body>
     <%= yield %>
+  <footer>
+    <hr>
+    <div>
+      <%= year %>
+    </div>
+    <div>
+      Egor Tikhanin
+    </div>
+    <div>
+      <%= link_to 'TestGuru', github_url('windyeti', 'test_guru'), target: "_blank" %>
+    </div>
+    <div>Текст описания проекта</div>
+    <div>
+      <%= link_to "Учебный проект в онлайн-школе Thinknetica", "https://www.thinknetica.com", target: "_blank" %>
+    </div>
+  </footer>
   </body>
 </html>
