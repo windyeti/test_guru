@@ -1,20 +1,16 @@
 class User < ApplicationRecord
-  has_many :tests_users, dependent: :destroy
-  has_many :tests, through: :tests_users
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages
 
   has_many :created_tests, class_name: "Test"
 
   validates :email, presence: true
 
-  # scope :list_test_user, -> (options) do
-  #   options[:self].tests.where(level: options[:level])
-  # end
-  #
-  # def list_test_user(level)
-  #   self.class.list_test_user(level: level, self: self)
-  # end
-
   def list_test_user(level)
     tests.where(level: level)
+  end
+
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 end

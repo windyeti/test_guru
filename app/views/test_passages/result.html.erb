@@ -1,0 +1,11 @@
+<h1>Result <%= @test_passage.test.title %></h1>
+<div class="test-result">
+  <% if result_test %>
+    <h3 class="success">Вы прошли тест</h3>
+  <% else %>
+    <h3 class="failed">Вы не прошли тест</h3>
+  <% end %>
+</div>
+
+| <%= link_to 'Все тесты', tests_path %> |
+

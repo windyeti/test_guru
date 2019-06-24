@@ -1,0 +1,10 @@
+.test-result {
+  h3 {
+    &.failed {
+      color: red
+    }
+    &.success {
+      color: lawngreen;
+    }
+  }
+}
