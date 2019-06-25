@@ -1,9 +1,10 @@
 <h1>Result <%= @test_passage.test.title %></h1>
+<% percentage = @test_passage.percentage_passage.to_i %>
 <div class="test-result">
-  <% if result_test %>
-    <h3 class="success">Вы прошли тест</h3>
+  <% if @test_passage.successful_passage? %>
+    <h3 class="success">Вы прошли тест (<%= percentage %>%)</h3>
   <% else %>
-    <h3 class="failed">Вы не прошли тест</h3>
+    <h3 class="failed">Вы не прошли тест (<%= percentage %>%)</h3>
   <% end %>
 </div>
 
