@@ -1,6 +1,6 @@
 module QuestionsHelper
   def question_header(options)
-    if options[:test].nil?
+    if options[:question].persisted?
       title = options[:question].test.title
       "Edit #{title} Question"
     else

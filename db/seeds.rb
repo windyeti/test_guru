@@ -97,14 +97,14 @@ answers = Answer.create!([
     {body: 'Протокол передачи гипертекста', question_id: parent_category(questions, body: 'HTTP это...(2)')}
   ])
 
-TestsUser.create!([
-    {user_id: users[0].id, test_id: tests[1].id},
-    {user_id: users[0].id, test_id: tests[2].id},
-    {user_id: users[0].id, test_id: tests[3].id},
-    {user_id: users[0].id, test_id: tests[4].id},
-    {user_id: users[0].id, test_id: tests[5].id},
-    {user_id: users[1].id, test_id: tests[3].id},
-    {user_id: users[1].id, test_id: tests[4].id},
-    {user_id: users[1].id, test_id: tests[5].id},
-    {user_id: users[1].id, test_id: tests[6].id}
-  ])
+# TestsUser.create!([
+#     {user_id: users[0].id, test_id: tests[1].id},
+#     {user_id: users[0].id, test_id: tests[2].id},
+#     {user_id: users[0].id, test_id: tests[3].id},
+#     {user_id: users[0].id, test_id: tests[4].id},
+#     {user_id: users[0].id, test_id: tests[5].id},
+#     {user_id: users[1].id, test_id: tests[3].id},
+#     {user_id: users[1].id, test_id: tests[4].id},
+#     {user_id: users[1].id, test_id: tests[5].id},
+#     {user_id: users[1].id, test_id: tests[6].id}
+#   ])

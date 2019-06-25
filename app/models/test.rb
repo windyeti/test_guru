@@ -4,8 +4,8 @@ class Test < ApplicationRecord
 
   has_many :questions, dependent: :destroy
 
-  has_many :tests_users, dependent: :destroy
-  has_many :users, through: :tests_users
+  has_many :test_passages, dependent: :destroy
+  has_many :users, through: :test_passages
 
   scope :tests_beginer, -> { where(level: 0..1) }
   scope :tests_middle, -> { where(level: 2..4) }
