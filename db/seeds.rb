@@ -16,7 +16,7 @@ def parent_category(list, hash)
   objs.first.id
 end
 
-users = User.create!([{name: 'Egor', email: 'egor@mail.ru'}, {name: 'Jora', email: 'jora@mail.ru'}])
+users = User.create!([{email: 'egor@mail.ru'}, {email: 'jora@mail.ru'}])
 
 categories = Category.create!([{title: 'Frontend'}, {title: 'Backend'}, {title: 'WEB'}])
 tests = Test.create!([
