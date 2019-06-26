@@ -6,12 +6,12 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_question
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if !answer_ids.nil? && correct_answer?(answer_ids)
+    self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
   end
 
   def correct_answers
