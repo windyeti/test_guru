@@ -1,20 +1,9 @@
 <h1><%= question_header(test: @test, question: @question) %></h1>
-<% if @question.errors.present? %>
-  <h3>Errors</h3>
-  <ul>
-    <% @question.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render 'shared/errors', resource: @question %>
 <%= form_with(model: [@test, @question], local: true) do |f|%>
   <p>
     <%= f.label(:body, 'Тело вопроса') %>
     <%= f.text_field(:body) %>
-  </p>
-  <p>
-    <%= f.label(:correct) %>
-    <%= f.check_box(:correct) %>
   </p>
   <%= f.submit(value_submit) %>
 <% end %>

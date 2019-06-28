@@ -6,4 +6,9 @@ module ApplicationHelper
   def year
     Time.current.year
   end
+
+  def flash_message(flash)
+    p flash
+    flash.map {|type , message| "<div class='flash_#{type}'>#{message}</div>"}.join(' ')
+  end
 end
