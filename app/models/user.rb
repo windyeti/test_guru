@@ -9,6 +9,9 @@ class User < ApplicationRecord
 
   has_many :created_tests, class_name: "Test"
 
+  validates :email, uniqueness: true
+  validates :email, format: { with: /[0-9a-zA-Z]{3,}@[0-9a-zA-Z]+\.(com|ru){1}/ }
+
   def list_test_user(level)
     tests.where(level: level)
   end

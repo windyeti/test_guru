@@ -5,10 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged?
 
   def request_current_url
-    p '====================='
-    p "#{request.original_url == 'http://localhost:3000/login'}"
-    cookies[:wanna_be_here] = request.original_url unless current_url?
-    p cookies[:wanna_be_here]
+    cookies[:wanna_be_here] = request.original_url unless registration_url?
   end
 
   def authenticate_user
@@ -23,7 +20,7 @@ class ApplicationController < ActionController::Base
     session[:user_id].present?
   end
 
-  def current_url?
+  def registration_url?
     request.original_url == 'http://localhost:3000/login' ||
     request.original_url == 'http://localhost:3000/sessions'
   end

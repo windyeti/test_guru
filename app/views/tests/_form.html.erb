@@ -20,10 +20,10 @@
     <%= f.label(:category_id) %>
     <%= f.collection_select(:category_id, Category.all, :id, :title, prompt: true) %>
   </p>
-  <p>
-    <%= f.label(:user_id) %>
-    <%= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %>
-  </p>
+<!--  <p>-->
+    <%#= f.label(:user_id) %>
+    <%#= f.collection_select(:user_id, User.all, :id, :name, prompt: true) %>
+<!--  </p>-->
   <p>
     <%= f.submit %>
   </p>
