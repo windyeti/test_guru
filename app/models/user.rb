@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # EMAIL_REGEXP = /[0-9a-zA-Z]{3,}@[0-9a-zA-Z]+\.(com|ru){1}/
 
   # include Auth
 
@@ -10,7 +11,7 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: "Test"
 
   validates :email, uniqueness: true
-  validates :email, format: { with: /[0-9a-zA-Z]{3,}@[0-9a-zA-Z]+\.(com|ru){1}/ }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def list_test_user(level)
     tests.where(level: level)

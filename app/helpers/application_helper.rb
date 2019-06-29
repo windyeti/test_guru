@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def flash_message(flash)
-    flash.map {|type , message| "<div class='flash_#{type}'>#{message}</div>"}.join(' ')
+    flash.map {|type , message| "<div class='flash_#{type}'>#{message}</div>"}.join(' ').html_safe
   end
 end

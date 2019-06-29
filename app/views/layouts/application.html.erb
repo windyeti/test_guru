@@ -10,22 +10,25 @@
   </head>
   <% if flash.present? %>
     <div class="flash">
-      <%= flash_message(flash).html_safe %>
+      <%= flash_message(flash) %>
     </div>
   <% end %>
-  <div class="registration_menu">
-    <% if logged? %>
-      <p class="welcome">
-        Welcome, <%= @current_user.email %> <%= link_to 'Guru', '/about' %>
-      </p>
-      <p>
-        | <%= link_to 'Log Out', logout_path %> |
-      </p>
+  <div class="header">
+    <div class="logo"><%= link_to 'Хочу все знать!', '/' %></div>
+    <div class="registration_menu">
+      <% if logged? %>
+        <p class="welcome">
+          Welcome, <%= @current_user.email %> Guru
+        </p>
+        <p>
+          | <%= link_to 'Log Out', logout_path, method: :delete %> |
+        </p>
       <% else %>
-      <p>
-        | <%= link_to 'Sign Up', signup_path %> | <%= link_to 'Log In', login_path %> |
-      </p>
-    <% end %>
+        <p>
+          | <%= link_to 'Sign Up', signup_path %> | <%= link_to 'Log In', login_path %> |
+        </p>
+      <% end %>
+    </div>
   </div>
 
   <body>

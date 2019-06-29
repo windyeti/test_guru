@@ -54,7 +54,7 @@ class TestsController < ApplicationController
   end
 
   def find_user
-    @user = @current_user
+    @user = current_user
   end
 
   def rescue_with_not_found_test
