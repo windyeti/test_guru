@@ -1,0 +1,25 @@
+.header {
+  min-height: 50px;
+}
+.logo {
+  float: left;
+  font-weight: 900;
+  color: #5b823f;
+  padding: 10px 0;
+  font-size: 200%;
+  text-transform: uppercase;
+  a {
+    text-decoration: none;
+  }
+}
+.registration_menu {
+  border: 1px solid gray;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  float: right;
+  .welcome {
+    font-weight: 800;
+  }
+}
