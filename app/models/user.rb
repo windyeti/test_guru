@@ -1,9 +1,12 @@
 class User < ApplicationRecord
-  # EMAIL_REGEXP = /[0-9a-zA-Z]{3,}@[0-9a-zA-Z]+\.(com|ru){1}/
 
-  # include Auth
-
-  has_secure_password
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :validatable,
+         :confirmable,
+         :trackable
 
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
