@@ -19,10 +19,8 @@
 </ol>
 
 <p>
-  | <%= link_to "Edit", edit_question_path(@question) %> |
-  | <%= link_to "Delete", question_path(@question), method: :delete,
-                data: {confirm: "Are you sure?\nПодтверждение на удаление #{@question.body}"} %> |
-  | <%= link_to "Создать новый ответ", new_question_answer_path(@question) %> |
-  | <%= link_to "Тест", test_path(@question.test) %> |
-  | <%= link_to 'Все тесты', tests_path %> |
+  | <%= link_to "Edit", edit_admin_question_path(@question) %> |
+  | <%= link_to "Создать новый ответ", new_admin_question_answer_path(@question) %> |
+  | <%= link_to "Back", admin_test_path(@question.test) %> |
+  | <%= link_to 'Все тесты', admin_tests_path %> |
 </p>

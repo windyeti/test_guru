@@ -1,4 +1,6 @@
 class Admin::TestsController < ApplicationController
+  layout 'admin'
+
   before_action :require_admin!
   before_action :find_test, only: [:show, :edit, :update, :destroy]
 
@@ -39,14 +41,6 @@ class Admin::TestsController < ApplicationController
   end
 
   private
-
-  def require_admin!
-    redirect_to tests_path, :alert => "You have not permission" unless class?
-  end
-
-  def class?
-    current_user.is_a?(Admin)
-  end
 
   def test_params
     params.require(:test).permit(:title, :level, :category_id, :user_id)
