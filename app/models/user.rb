@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_many :test_passages, dependent: :destroy
+  has_many :tests, through: :test_passages
+
+  has_many :created_tests, class_name: "Test"
 
   devise :database_authenticatable,
          :registerable,
@@ -7,14 +11,6 @@ class User < ApplicationRecord
          :validatable,
          :confirmable,
          :trackable
-
-  has_many :test_passages, dependent: :destroy
-  has_many :tests, through: :test_passages
-
-  has_many :created_tests, class_name: "Test"
-
-  validates :email, uniqueness: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   def list_test_user(level)
     tests.where(level: level)
