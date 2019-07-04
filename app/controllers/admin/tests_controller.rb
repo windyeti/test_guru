@@ -1,7 +1,5 @@
-class Admin::TestsController < ApplicationController
-  layout 'admin'
+class Admin::TestsController < Admin::BaseController
 
-  before_action :require_admin!
   before_action :find_test, only: [:show, :edit, :update, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found_test

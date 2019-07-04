@@ -4,15 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  private
-
-  def require_admin!
-    redirect_to tests_path, :alert => "You have not permission" unless class?
-  end
-
-  def class?
-    current_user.is_a?(Admin)
-  end
 
   protected
 

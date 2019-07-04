@@ -1,7 +1,5 @@
-class Admin::AnswersController < ApplicationController
-  layout 'admin'
+class Admin::AnswersController < Admin::BaseController
 
-  before_action :require_admin!
   before_action :find_question, only: [:new, :create]
   before_action :find_answer, only: [:show, :edit, :update, :destroy]
 
