@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
-    admin_tests_path
+    flash[:warning] = "#{current_user.first_name}, you are log in!!!"
+    current_user.is_a?(Admin) ? admin_tests_path : tests_path
   end
 
   protected
