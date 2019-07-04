@@ -12,6 +12,10 @@ class User < ApplicationRecord
          :confirmable,
          :trackable
 
+  def admin?
+    is_a?(Admin)
+  end
+
   def list_test_user(level)
     tests.where(level: level)
   end
