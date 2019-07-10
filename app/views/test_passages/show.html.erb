@@ -1,9 +1,9 @@
-<h1>Passage in the <%= @test_passage.test.title %></h1>
+<h1><%= raw t('.header', title: @test_passage.test.title) %></h1>
 <p>
-  Вопрос: <%= @test_passage.current_question.body %>
+  <%= raw t('.question', question: @test_passage.current_question.body) %>
 </p>
 <p>
-  вопрос №<%= @test_passage.number_question %> из <%= @test_passage.test.questions.count %>
+  <%= raw t('.count_questions', number: @test_passage.number_question, total: @test_passage.test.questions.count) %>
 </p>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|%>
@@ -13,9 +13,9 @@
       <%= c.label %>
     </p>
   <% end %>
-  <%= form.submit %>
+  <%= form.submit t('.submit')%>
 <% end %>
 
 <p>
-  | <%= link_to 'Все тесты', tests_path %> |
+  | <%= link_to t('.back'), tests_path %> |
 </p>

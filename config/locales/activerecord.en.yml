@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    models:
+      test: "Test"
+
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+      question:
+        body: "Question"
+      answer:
+        body: "Answer"
+
+    errors:
+      messages:
+        blank: "can not be blank"
+        greater_than: "must be greater than zero"
+        taken: "and level must be uniqueness"

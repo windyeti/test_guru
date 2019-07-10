@@ -1,12 +1,12 @@
-<h1>Result <%= @test_passage.test.title %></h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 <% percentage = @test_passage.percentage_passage.to_i %>
 <div class="test-result">
   <% if @test_passage.successful_passage? %>
-    <h3 class="success">Вы прошли тест (<%= percentage %>%)</h3>
+    <h3 class="success"><%= t('.success', percentage: percentage) %></h3>
   <% else %>
-    <h3 class="failed">Вы не прошли тест (<%= percentage %>%)</h3>
+    <h3 class="failed"><%= t('.failed', percentage: percentage) %></h3>
   <% end %>
 </div>
 
-| <%= link_to 'Все тесты', tests_path %> |
+| <%= link_to t('.back'), tests_path %> |
 

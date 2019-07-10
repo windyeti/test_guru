@@ -1,0 +1,118 @@
+en:
+  helpers:
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      question:
+        body: "Question"
+      answer:
+        body: "Answer"
+        correct: "Correct"
+
+    submit:
+      test:
+        create: "Create test!"
+        update: "Update test!"
+      question:
+        create: "Create question!"
+        update: "Update question!"
+      answer:
+        create: "Create answer!"
+        update: "Update answer!"
+    select:
+      admin:
+        test:
+          hint: "Choose"
+
+  admin:
+    error_header:
+      one: "%{count} error"
+      other: "%{count} errors"
+    tests:
+      index:
+        header: "Tests"
+        create_test: "Create new test!"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        are_you_sure: "Are you sure?"
+
+        id: "ID"
+        title: "Title"
+        level: "Level"
+        category: "Category"
+        count_questions: "Count Questions"
+        action: "Action"
+      new:
+        header: "New test"
+        back: "Back"
+      show:
+        header: "%{title} test"
+        header_level: "Level %{level} test"
+
+        id: "ID"
+        body_question: "Question"
+        from_test: "From test"
+        level: "Level"
+        actions: "Actions"
+        back: "Back"
+        create_new_question: "Create new question"
+
+        no_question: "This test has no questions."
+      edit:
+        header: "Test Edit"
+        back: "Back"
+
+    questions:
+      show:
+        header: "Question %{title}"
+
+        id: "ID"
+        question: "Question"
+        from_test: "From test"
+        level: "Level"
+
+        edit: "Edit"
+        create_new_answer: "Create new answer"
+        back: "Back"
+        all_tests: "All tests"
+      new:
+        back: "Back"
+        all_tests: "All tests"
+      question:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        are_you_sure: "Are you sure?"
+      edit:
+        back: "Back"
+        all_tests: "All tests"
+      form:
+        new_header: "Create Question for test"
+        edit_header: "Edit Question for test"
+
+    answers:
+      answer:
+        header: "Answer %{title}"
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        are_you_sure: "Are you sure?"
+      show:
+        header: "Answer from question %{question}"
+        answer: "Answer"
+        correct: "Correct"
+        edit: "Edit"
+        back: "Back"
+      new:
+        header: "New Answer"
+        for_question: "to the question %{question}"
+        back: "Back"
+      edit:
+        header: "Edit Answer"
+        for_question: "to the question %{question}"
+        show: "Show"
+        back: "Back"

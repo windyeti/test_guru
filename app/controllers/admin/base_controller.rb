@@ -6,7 +6,7 @@ class Admin::BaseController < ApplicationController
   private
 
   def require_admin!
-    redirect_to tests_path, :alert => "You have not permission" unless current_user.admin?
+    redirect_to tests_path, :alert => t('admin.not_permissions') unless current_user.admin?
   end
 
 end

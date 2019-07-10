@@ -1,0 +1,129 @@
+ru:
+  helpers:
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: "Вопрос"
+      answer:
+        body: "Ответ"
+        correct: "Корректность"
+
+    submit:
+      test:
+        create: "Создать тест!"
+        update: "Обновить тест!"
+      question:
+        create: "Создать вопрос!"
+        update: "Обновить вопрос!"
+      answer:
+        create: "Создать ответ!"
+        update: "Обновить ответ!"
+    select:
+      admin:
+        test:
+          hint: "Надо выбрать"
+
+  admin:
+    error_header:
+      few: "%{count} ошибки"
+      many: "%{count} ошибок"
+      one: "%{count} ошибка"
+      other: "%{count} ошибок"
+    tests:
+      index:
+        header: "Тесты"
+        create_test: "Создать тест"
+
+        id: "Идентификатор"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        count_questions: "Количество вопросов"
+        actions: "Действие"
+
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        are_you_sure: "Вы уверенны?"
+
+        id: "Идентификатор"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        count_questions: "Количество вопросов"
+        action: "Действие"
+      new:
+        header: "Новый тест"
+        back: "Назад"
+      show:
+        header: "%{title} тест"
+        header_level: "Это тест уровня %{level}"
+
+        id: "Идентификатор"
+        body_question: "Вопрос"
+        from_test: "Из теста"
+        level: "Уровень"
+        actions: "Действия"
+        back: "Назад"
+        create_new_question: "Создать новый вопрос"
+
+        no_question: "У теста нет вопросов."
+      edit:
+        header: "Редактирование теста"
+        back: "Назад"
+
+    questions:
+      show:
+        header: "Вопрос %{title}"
+
+        id: "Идентификатор"
+        question: "Вопрос"
+        from_test: "Из теста"
+        level: "Уровень"
+
+        edit: "Редактировать"
+        create_new_answer: "Создать новый ответ"
+        back: "Назад"
+        all_tests: "Все тесты"
+      new:
+        back: "Назад"
+        all_tests: "Все тесты"
+      question:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        are_you_sure: "Вы уверенны?"
+      edit:
+        back: "Назад"
+        all_tests: "Все тесты"
+      form:
+        new_header: "Создать вопрос для теста"
+        edit_header: "Редактировать вопрос для теста"
+
+    answers:
+      answer:
+        header: "Ответ %{title}"
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        are_you_sure: "Вы уверенны?"
+      show:
+        header: "Ответ из вопроса %{question}"
+        answer: "Ответ"
+        correct: "Корректность"
+        edit: "Редактировать"
+        back: "Назад"
+      new:
+        header: "Новый ответ"
+        for_question: "к вопросу %{question}"
+        back: "Назад"
+      edit:
+        header: "Редактировать ответ"
+        for_question: "к вопросу %{question}"
+        show: "Показать"
+        back: "Назад"
+

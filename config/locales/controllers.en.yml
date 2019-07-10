@@ -1,0 +1,12 @@
+en:
+  users:
+    sessions:
+      welcome: "%{name}, you are log in!!!"
+  admin:
+    not_permissions: "You have not permission"
+    answers:
+      create:
+        notice_create_answer: "Answer has been create"
+  tests:
+    rescue_with_not_found_test:
+      not_found_test: "Not found test"

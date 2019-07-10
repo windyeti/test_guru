@@ -19,5 +19,5 @@ class Test < ApplicationRecord
 
   validates :title, presence: true
   validates :level, numericality: { greater_than: 0, only_integer: true }
-  validates :title, uniqueness: { scope: :level, message: "Pair title_level must be uniqueness!" }
+  validates :title, uniqueness: { scope: :level }
 end
