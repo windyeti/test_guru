@@ -1,11 +1,14 @@
 .header {
   min-height: 50px;
+  &.admin {
+    background-color: #ff3c6d;
+  }
 }
-.logo {
+.logo, .head-admin {
   float: left;
   font-weight: 900;
-  color: #5b823f;
-  padding: 10px 0;
+  color: rgba(0, 0, 0, 0.11);
+  padding: 15px 10px;
   font-size: 200%;
   text-transform: uppercase;
   a {
@@ -18,6 +21,8 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
   padding: 5px 10px;
+  margin: 5px;
+  background-color: #fff;
   float: right;
   .welcome {
     font-weight: 800;
