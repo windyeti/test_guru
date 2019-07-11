@@ -1,12 +1,11 @@
-<p id="notice"><%= notice %></p>
-<h1>Ответ к вопросу <%= @answer.question.body %></h1>
+<h1><%= t('.header', question: @answer.question.body) %></h1>
 
 <p>
-  <strong>Ответ: </strong><%= @answer.body %>
+  <strong><%= t('.answer') %>: </strong><%= @answer.body %>
 </p>
 <p>
-  <strong>Correct: </strong><%= @answer.correct %>
+  <strong><%= t('.correct') %>: </strong><%= @answer.correct %>
 </p>
 
-<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
-<%= link_to 'Back', admin_question_path(@answer.question) %>
+<%= link_to t('.edit'), edit_admin_answer_path(@answer) %> |
+<%= link_to t('.back'), admin_question_path(@answer.question) %>

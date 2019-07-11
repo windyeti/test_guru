@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    models:
+      test: "Тест"
+
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+      question:
+        body: "Вопрос"
+      answer:
+        body: "Ответ"
+
+    errors:
+      messages:
+        blank: "не может быть пустым"
+        greater_than: "должен быть больше нуля"
+        taken: "и уровень должны быть уникальной комбинацией"

@@ -1,0 +1,84 @@
+ru:
+  helpers:
+    label:
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Емейл"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Пароль действующий в данный момент"
+        remember_me: "Запомнить меня"
+    submit:
+      user:
+        create: "Создать пользователя"
+        update: "Изменить данные"
+  devise:
+    registrations:
+      new:
+        header: "Регистрация пользователя"
+        password_length: "минимум символов"
+#        password_length: "characters minimum"
+      edit:
+        header: "Редактировать"
+        password_length: "минимум символов"
+#        password_length: "characters minimum"
+        warning_blank_password: "оставьте пустым поле пароля, если не хотите его менять"
+#        warning_blank_password: "leave blank if you don't want to change it"
+        waiting_confirmation: "Ожидается подтверждение для:"
+#        waiting_confirmation: "Currently waiting confirmation for:"
+        warning_need_current_password: "нам необходим ваш действующий пароль для внесения изменений"
+#        warning_need_current_password: "we need your current password to confirm your changes"
+        cancel_account: "Удалить мой аккаунт"
+#        cancel_account: "Cancel my account"
+        unhappy: "Несчастливы?"
+#        unhappy: "Unhappy?"
+        button_cancel_account: "Удалить мой аккаунт"
+#        button_cancel_account: "Cancel my account"
+        back: "Назад"
+#        back: "Back"
+        are_you_sure: "Вы уверенны?"
+#        are_you_sure: "Are you sure?"
+    sessions:
+      new:
+        header: "Залогиниться"
+#        header: "Log in"
+        submit: "Войти"
+#        submit: "Exit"
+    passwords:
+      new:
+        header: "Забыли пароль?"
+#        header: "Forgot your password?"
+        submit: "Отправить мне инструкцию для сброса пароля"
+#        submit: "Send me reset password instructions"
+      edit:
+        header: "Измените ваш пароль"
+#        header: "Change your password"
+        new_password: "Новый пароль"
+#        new_password: "New password"
+        password_length: "минимально символов"
+#        password_length: "characters minimum"
+        confirm_password: "Подтверждение нового пароля"
+#        confirm_password: "Confirm new password"
+        submit: "Изменить пароль"
+    #    submit: "Change my password"
+    confirmations:
+      new:
+        header: "Повторная отправка инструкции для подтверждения"
+#        header: "Resend confirmation instructions"
+        submit: "Повторно отправить инструкцию для подтверждения"
+#        submit: "Resend confirmation instructions"
+
+
+    shared:
+      links:
+        login: "Залогиниться"
+        signup: "Регистрация"
+        forgot_password: "Забыли пароль?"
+#        forgot_password: "Forgot your password?"
+        didnot_receive_confirmation: "Не получили инструкции на подтверждение?"
+#        didnot_receive_confirmation: "Didn't receive confirmation instructions?"
+        didnot_receive_unlock: "Не получили инструкции на разлочивание?"
+#        didnot_receive_unlock: "Didn't receive unlock instructions?"
+        signin_with: "Залогиниться с помощью %{provider}"
+#        signin_with: "Sign in with %{provider}"

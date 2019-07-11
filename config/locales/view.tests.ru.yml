@@ -1,0 +1,26 @@
+ru:
+  test_passages:
+    show:
+      submit: "Следующий вопрос"
+      header: "Прохождение теста <i>%{title}</i>"
+      question: "Вопрос: <b>%{question}</b>"
+      count_questions: "Вопрос <b>№%{number}</b> из <b>%{total}</b>"
+      back: "Назад"
+    result:
+      header: "Результат теста %{title}"
+      success: "Вы прошли тест набрав %{percentage}% правильных ответов"
+      failed: "Вы не прошли тест набрав %{percentage}% правильных ответов"
+      back: "Назад"
+
+  tests:
+    test:
+      start: "Старт!"
+    index:
+      header: "Тесты"
+
+      id: "Идентификатор"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      count_questions: "Количество вопросов"
+      action: "Действие"

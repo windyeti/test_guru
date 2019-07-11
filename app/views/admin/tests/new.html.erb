@@ -1,5 +1,6 @@
-<h1>Test New</h1>
-<%= render partial: 'form' %>
+<h1><%= t('.header') %></h1>
+<%= render partial: 'shared/errors', locals: { resources: @test } %>
+<%= render 'form' %>
 <p>
-  | <%= link_to 'Back', admin_tests_path %> |
+  | <%= link_to t('.back'), admin_tests_path %> |
 </p>

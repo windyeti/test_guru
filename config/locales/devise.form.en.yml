@@ -1,0 +1,60 @@
+en:
+  helpers:
+    label:
+      user:
+        first_name: "First Name"
+        last_name: "Last Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirmation password"
+        current_password: "Currently password"
+        remember_me: "Remember me"
+    submit:
+      user:
+        create: "Create user"
+        update: "Update user"
+
+  devise:
+    registrations:
+      new:
+        header: "Sign up"
+        password_length: "characters minimum"
+      edit:
+        header: "Edit"
+        password_length: "characters minimum"
+        warning_blank_password: "leave blank if you don't want to change it"
+        waiting_confirmation: "Currently waiting confirmation for:"
+        warning_need_current_password: "we need your current password to confirm your changes"
+        cancel_account: "Cancel my account"
+        unhappy: "Unhappy?"
+        button_cancel_account: "Cancel my account"
+        back: "Back"
+        are_you_sure: "Are you sure?"
+    sessions:
+      new:
+        header: "Log in"
+        submit: "Exit"
+    passwords:
+      new:
+        header: "Forgot your password?"
+        submit: "Send me reset password instructions"
+      edit:
+        header: "Change your password"
+        new_password: "New password"
+        password_length: "characters minimum"
+        confirm_password: "Confirm new password"
+        submit: "Change my password"
+    confirmations:
+      new:
+        header: "Resend confirmation instructions"
+        submit: "Resend confirmation instructions"
+
+
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        didnot_receive_confirmation: "Didn't receive confirmation instructions?"
+        didnot_receive_unlock: "Didn't receive unlock instructions?"
+        signin_with: "Sign in with %{provider}"

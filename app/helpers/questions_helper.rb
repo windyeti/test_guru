@@ -2,10 +2,10 @@ module QuestionsHelper
   def question_header(options)
     if options[:question].persisted?
       title = options[:question].test.title
-      "Edit #{title} Question"
+      "#{options[:edit_header]} #{title}"
     else
       title = options[:test].title
-      "Create New #{title} Question"
+      "#{options[:new_header]} #{title}"
     end
   end
 end

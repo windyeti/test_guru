@@ -1,8 +1,7 @@
-<% if resource.errors.present? %>
-  <% count = resource.errors.count %>
-  <h2><%= count %> <%= 'error'.pluralize(count) %></h2>
+<% if resources.errors.present? %>
+  <h3><%= t('admin.error_header', count: resources.errors.count) %></h3>
   <ul>
-    <% resource.errors.full_messages.each do |message| %>
+    <% resources.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>

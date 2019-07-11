@@ -1,9 +1,9 @@
-<h1><%= question_header(test: @test, question: @question) %></h1>
-<%= render 'shared/errors', resource: @question %>
+<h1><%= question_header(test: @test, question: @question, edit_header: t('.edit_header'), new_header: t('.new_header')) %></h1>
+<%= render partial: 'shared/errors', locals: { resources: @question } %>
 <%= form_with(model: [:admin, @test, @question], local: true) do |f|%>
   <p>
-    <%= f.label(:body, 'Тело вопроса') %>
+    <%= f.label(:body) %>
     <%= f.text_field(:body) %>
   </p>
-  <%= f.submit(value_submit) %>
+  <%= f.submit %>
 <% end %>

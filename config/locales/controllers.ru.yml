@@ -1,0 +1,12 @@
+ru:
+  users:
+    sessions:
+      welcome: "%{name}, вы залогинились!!!"
+  admin:
+    not_permissions: "У вас недостаточно прав"
+    answers:
+      create:
+        notice_create_answer: "Ответ создан"
+  tests:
+    rescue_with_not_found_test:
+      not_found_test: "Тест не найден"
