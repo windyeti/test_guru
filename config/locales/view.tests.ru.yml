@@ -2,14 +2,15 @@ ru:
   test_passages:
     show:
       submit: "Следующий вопрос"
-      header: "Прохождение теста <i>%{title}</i>"
+      header: "Прохождение теста"
       question: "Вопрос: <b>%{question}</b>"
       count_questions: "Вопрос <b>№%{number}</b> из <b>%{total}</b>"
+      no_question: "У теста нет вопросов"
       back: "Назад"
     result:
-      header: "Результат теста %{title}"
-      success: "Вы прошли тест набрав %{percentage}% правильных ответов"
-      failed: "Вы не прошли тест набрав %{percentage}% правильных ответов"
+      header: "Результат теста"
+      success: "Вы прошли тест. %{percentage}% правильных ответов"
+      failed: "Вы не прошли тест. %{percentage}% правильных ответов"
       back: "Назад"
 
   tests:
@@ -18,7 +19,7 @@ ru:
     index:
       header: "Тесты"
 
-      id: "Идентификатор"
+      id: "№"
       title: "Название"
       level: "Уровень"
       category: "Категория"

@@ -1,6 +1,15 @@
-<h1><%= t('.header') %></h1>
-<h2><%= t('.for_question', question: @answer.question.body) %></h2>
-<%= render partial: 'shared/errors', locals: { resources: @answer } %>
-<%= render 'form' %>
-<%= link_to t('.show'), admin_answer_path(@answer) %> |
-<%= link_to t('.back'), admin_question_path(@answer.question) %>
+<div class="row justify-content-center pt-3">
+  <div class="col-12 col-md-10 col-lg-8">
+    <div class="card">
+      <h1 class="card-header"><%= t('.header') %></h1>
+      <div class="card-body">
+        <h2 class="card-title"><%= t('.for_question', question: @answer.question.body) %></h2>
+        <%= render partial: 'shared/errors', locals: { resources: @answer } %>
+        <%= render 'form' %>
+      </div>
+    </div>
+    <p class="pt-3">
+      <%= button_to t('.back'), admin_question_path(@answer.question), method: :get, type: "button", class: "btn btn-outline-secondary" %>
+    </p>
+  </div>
+</div>

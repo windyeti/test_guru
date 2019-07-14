@@ -1,10 +1,14 @@
-<h1><%= t('.header', title: @question.body) %></h1>
-<table>
-  <tr>
-    <th><%= t('.id') %></th>
-    <th><%= t('.question') %></th>
-    <th><%= t('.from_test') %></th>
-    <th><%= t('.level') %></th>
+<div class="row justify-content-center">
+  <div class="col col-md-10 col-lg-8 table-responsive">
+    <h1 class="pt-3 pb-3 heading"><%= t('.header', title: @question.body) %></h1><p>
+    | <%= link_to t('.create_new_answer'), new_admin_question_answer_path(@question) %> |
+  </p>
+<table class="table table-striped table-borderless table-hover ">
+  <tr class="thead-dark">
+    <th scope="col"><%= t('.id') %></th>
+    <th scope="col"><%= t('.question') %></th>
+    <th scope="col"><%= t('.from_test') %></th>
+    <th scope="col"><%= t('.level') %></th>
   </tr>
   <tr>
     <td> <%= @question.id %> </td>
@@ -13,14 +17,19 @@
     <td> <%= @question.test.level %> </td>
   </tr>
 </table>
-
+    <% if @question.answers.present? %>
 <ol>
   <%= render @question.answers %>
 </ol>
 
-<p>
-  | <%= link_to t('.edit'), edit_admin_question_path(@question) %> |
-  | <%= link_to t('.create_new_answer'), new_admin_question_answer_path(@question) %> |
-  | <%= link_to t('.back'), admin_test_path(@question.test) %> |
-  | <%= link_to t('.all_tests'), admin_tests_path %> |
-</p>
+<% else %>
+  <p><%= t('.no_answer') %></p>
+<% end %>
+
+  <p>
+    <%= button_to t('.back'), admin_test_path(@question.test), method: :get, class: 'btn btn-secondary btn-down' %>
+    <%= button_to t('.all_tests'), admin_tests_path, method: :get, class: 'btn btn-info btn-down' %>
+  </p>
+  </div>
+</div>
+

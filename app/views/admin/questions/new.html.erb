@@ -1,5 +1,12 @@
-<%= render partial: "form" %>
-<p>
-  | <%= link_to t('.back'), admin_test_path(@test) %> |
-  | <%= link_to t('.all_tests'), admin_tests_path %> |
-</p>
+<div class="row justify-content-center pt-3">
+  <div class="col-12 col-md-10 col-lg-8">
+    <div class="card">
+      <%= render partial: "form" %>
+    </div>
+    <p>
+      <%= button_to t('.back'), admin_test_path(@test), method: :get, class: 'btn btn-secondary btn-down' %>
+      <%= button_to t('.all_tests'), admin_tests_path, method: :get, class: 'btn btn-info btn-down' %>
+    </p>
+  </div>
+</div>
+

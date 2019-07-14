@@ -1,13 +1,13 @@
 <%= form_with(model: [:admin, @question, @answer], local: true) do |form| %>
-  <p>
+  <p class="form-group">
     <%= form.label(:body) %>
-    <%= form.text_area(:body, size: '50x10') %>
+    <%= form.text_area(:body, size: '50x10', class: "form-control") %>
   </p>
-  <p>
-    <%= form.label(:correct) %>
+  <p class="form-group">
     <%= form.check_box(:correct) %>
+    <%= form.label(:correct) %>
   </p>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

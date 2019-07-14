@@ -2,12 +2,13 @@ en:
   test_passages:
     show:
       submit: "Next question"
-      header: "Passage the test <i>%{title}</i>"
+      header: "Passage the test"
       question: "Question: <b>%{question}</b>"
       count_questions: "Question <b>#%{number}</b> from <b>%{total}</b>"
+      no_question: "Test have not questions"
       back: "Back"
     result:
-      header: "Test %{title} result"
+      header: "Test result"
       success: "You passed the test. %{percentage}% correct answers"
       failed: "You did not pass the test. %{percentage}% correct answers"
       back: "Back"

@@ -37,20 +37,20 @@ ru:
         header: "Тесты"
         create_test: "Создать тест"
 
-        id: "Идентификатор"
+        id: "Идент."
         title: "Название"
         level: "Уровень"
         category: "Категория"
-        count_questions: "Количество вопросов"
-        actions: "Действие"
+        count_questions: "Вопросов"
+        actions: "Действия"
 
       test:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
-        are_you_sure: "Вы уверенны?"
+        are_you_sure: "Вы уверены?"
 
-        id: "Идентификатор"
+        id: "№"
         title: "Название"
         level: "Уровень"
         category: "Категория"
@@ -63,7 +63,7 @@ ru:
         header: "%{title} тест"
         header_level: "Это тест уровня %{level}"
 
-        id: "Идентификатор"
+        id: "№"
         body_question: "Вопрос"
         from_test: "Из теста"
         level: "Уровень"
@@ -80,7 +80,7 @@ ru:
       show:
         header: "Вопрос %{title}"
 
-        id: "Идентификатор"
+        id: "№"
         question: "Вопрос"
         from_test: "Из теста"
         level: "Уровень"
@@ -89,6 +89,8 @@ ru:
         create_new_answer: "Создать новый ответ"
         back: "Назад"
         all_tests: "Все тесты"
+
+        no_answer: "Этот вопрос не имеет ответов."
       new:
         back: "Назад"
         all_tests: "Все тесты"
@@ -96,7 +98,7 @@ ru:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
-        are_you_sure: "Вы уверенны?"
+        are_you_sure: "Вы уверены?"
       edit:
         back: "Назад"
         all_tests: "Все тесты"
@@ -110,7 +112,7 @@ ru:
         show: "Показать"
         edit: "Редактировать"
         delete: "Удалить"
-        are_you_sure: "Вы уверенны?"
+        are_you_sure: "Вы уверены?"
       show:
         header: "Ответ из вопроса %{question}"
         answer: "Ответ"

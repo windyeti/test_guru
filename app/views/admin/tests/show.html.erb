@@ -1,21 +1,26 @@
-<h1><%= t('.header', title: @test.title) %></h1>
-<p><%= t('.header_level', level: @test.level) %></p>
-<% if @test.questions.present? %>
-  <table>
-    <tr>
-      <th><%= t('.id') %></th>
-      <th><%= t('.body_question') %></th>
-      <th><%= t('.from_test') %></th>
-      <th><%= t('.level') %></th>
-      <th colspan="3"><%= t('.actions') %></th>
-    </tr>
-    <%#= render partial: 'questions/question', collection: @test.questions %>
-    <%= render @test.questions %>
-  </table>
-<% else %>
-  <p><%= t('.no_question') %></p>
-<% end %>
-<p>
-  | <%= link_to t('.back'), admin_tests_path %> |
-  | <%= link_to t('.create_new_question'), new_admin_test_question_path(@test) %> |
-</p>
+<div class="row justify-content-center">
+  <div class="col col-md-10 col-lg-8 table-responsive">
+    <h1 class="pt-3 pb-3 heading"><%= t('.header', title: @test.title) %></h1>
+    <% if @test.questions.present? %>
+    <p><%= t('.header_level', level: @test.level) %></p>
+    <p>
+    | <%= link_to t('.create_new_question'), new_admin_test_question_path(@test) %> |
+    </p>
+    <table class="table table-striped table-borderless table-hover ">
+      <tr class="thead-dark">
+        <th scope="col"><%= t('.id') %></th>
+        <th scope="col"><%= t('.body_question') %></th>
+        <th scope="col"><%= t('.from_test') %></th>
+        <th scope="col"><%= t('.level') %></th>
+        <th colspan="3"><%= t('.actions') %></th>
+      </tr>
+      <%= render @test.questions %>
+    </table>
+    <% else %>
+    <p><%= t('.no_question') %></p>
+    <% end %>
+    <p>
+      <%= button_to t('.back'), admin_tests_path, method: :get, class: 'btn btn-secondary' %>
+    </p>
+  </div>
+</div>
