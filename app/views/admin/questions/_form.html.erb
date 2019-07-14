@@ -1,9 +1,11 @@
-<h1><%= question_header(test: @test, question: @question, edit_header: t('.edit_header'), new_header: t('.new_header')) %></h1>
-<%= render partial: 'shared/errors', locals: { resources: @question } %>
-<%= form_with(model: [:admin, @test, @question], local: true) do |f|%>
-  <p>
-    <%= f.label(:body) %>
-    <%= f.text_field(:body) %>
-  </p>
-  <%= f.submit %>
-<% end %>
+<h1 class="card-header"><%= question_header(test: @test, question: @question, edit_header: t('.edit_header'), new_header: t('.new_header')) %></h1>
+<div class="card-body">
+  <%= render partial: 'shared/errors', locals: { resources: @question } %>
+  <%= form_with(model: [:admin, @test, @question], local: true) do |f|%>
+    <p class="form-group">
+      <%= f.label(:body) %>
+      <%= f.text_field(:body, class: 'form-control') %>
+    </p>
+    <%= f.submit class: 'btn btn-primary btn-block' %>
+  <% end %>
+</div>

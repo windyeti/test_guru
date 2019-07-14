@@ -1,0 +1,13 @@
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  background-color: #02264f;
+  font-size: 80%;
+  .container-fluid {
+    width: 80%;
+    @media all and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}

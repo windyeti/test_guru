@@ -1,6 +1,14 @@
-<h1><%= t('.header') %></h1>
-<%= render partial: 'shared/errors', locals: { resources: @test } %>
-<%= render 'form' %>
-<p>
-  | <%= link_to t('.back'), admin_tests_path %> |
-</p>
+<div class="row justify-content-center pt-3">
+  <div class="col-12 col-md-10 col-lg-8">
+    <div class="card">
+      <h1 class="card-header"><%= t('.header') %></h1>
+      <div class="card-body">
+        <%= render partial: 'shared/errors', locals: { resources: @test } %>
+        <%= render 'form' %>
+      </div>
+    </div>
+    <p class="pt-3">
+      <%= button_to t('.back'), admin_tests_path, method: :get, type: "button", class: "btn btn-outline-secondary" %>
+    </p>
+  </div>
+</div>

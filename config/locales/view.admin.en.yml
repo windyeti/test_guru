@@ -79,6 +79,8 @@ en:
         create_new_answer: "Create new answer"
         back: "Back"
         all_tests: "All tests"
+
+        no_answer: "This question has no answers."
       new:
         back: "Back"
         all_tests: "All tests"

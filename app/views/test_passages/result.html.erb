@@ -1,12 +1,20 @@
-<h1><%= t('.header', title: @test_passage.test.title) %></h1>
-<% percentage = @test_passage.percentage_passage.to_i %>
-<div class="test-result">
-  <% if @test_passage.successful_passage? %>
-    <h3 class="success"><%= t('.success', percentage: percentage) %></h3>
-  <% else %>
-    <h3 class="failed"><%= t('.failed', percentage: percentage) %></h3>
-  <% end %>
+<div class="row justify-content-center pt-3">
+  <div class="col-12 col-md-10 col-lg-8">
+    <div class="card">
+      <h3 class="card-header"><%= raw t('.header') %> <span class='badge badge-secondary'><%= @test_passage.test.title %></span></h3>
+      <div class="card-body">
+        <% percentage = @test_passage.percentage_passage.to_i %>
+        <div class="card-text">
+          <% if @test_passage.successful_passage? %>
+            <h5 class="text-success"><%= t('.success', percentage: percentage) %></h5>
+          <% else %>
+            <h5 class="text-danger"><%= t('.failed', percentage: percentage) %></h5>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <p class="pt-3">
+      <%= button_to t('.back'), tests_path, method: :get, type: "button", class: "btn btn-outline-secondary" %>
+    </p>
+  </div>
 </div>
-
-| <%= link_to t('.back'), tests_path %> |
-

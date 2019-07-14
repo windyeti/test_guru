@@ -1,8 +1,8 @@
 <tr>
-  <td><%= test.id %></td>
-  <td><%= test.title %></td>
-  <td><%= test.level %></td>
-  <td><%= test.category.title %></td>
-  <td><%= test.questions.count %></td>
-  <td><%= button_to t('.start'), start_test_path(test) %></td>
+  <td scope="row"><%= test.id %></td>
+  <td scope="row"><%= test.title %></td>
+  <td scope="row"><%= test.level %></td>
+  <td scope="row"><%= test.category.title %></td>
+  <td scope="row"><%= test.questions.count %></td>
+  <td scope="row"><%= button_to t('.start'), start_test_path(test), class: 'btn btn-primary' %></td>
 </tr>

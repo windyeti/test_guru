@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light <%= 'admin_panel' if current_user.is_a?(Admin) %>">
+  <%= link_to 'Хочу все знать!', root_path, class: 'navbar-brand' %>
+  <div class=" navbar-text mr-3" >
+    <%=  button_to 'Admin Panel', admin_tests_path, method: :get, class: 'btn btn-outline-light' if current_user.is_a?(Admin) %>
+  </div>
+  <div class=" navbar-text" >
+    <%= render partial: 'shared/menu' %>
+  </div>
+</nav>

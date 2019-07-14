@@ -1,21 +1,33 @@
-<h1><%= raw t('.header', title: @test_passage.test.title) %></h1>
-<p>
-  <%= raw t('.question', question: @test_passage.current_question.body) %>
-</p>
-<p>
-  <%= raw t('.count_questions', number: @test_passage.number_question, total: @test_passage.test.questions.count) %>
-</p>
-
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form|%>
-  <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |c| %>
-    <p>
-      <%= c.check_box id: "answer_ids_#{c.object.id}" %>
-      <%= c.label %>
+<div class="row justify-content-center pt-3">
+  <div class="col-12 col-md-10 col-lg-8">
+    <div class="card">
+      <h1 class="card-header"><%= raw t('.header') %> <span class='badge badge-secondary'><%= @test_passage.test.title %></span></h1>
+      <div class="card-body">
+        <% if @test_passage.test.questions.present? %>
+          <p class="card-title">
+            <%= raw t('.question', question: @test_passage.current_question.body) %>
+          </p>
+          <p class="card-title">
+            <%= raw t('.count_questions', number: @test_passage.number_question, total: @test_passage.test.questions.count) %>
+          </p>
+          <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+            <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |c| %>
+              <p>
+                <%= c.check_box id: "answer_ids_#{c.object.id}" %>
+                <%= c.label %>
+              </p>
+            <% end %>
+            <%= form.submit t('.submit'), class: 'btn btn-primary' %>
+          <% end %>
+        <% else %>
+          <p class="card-text">
+            <%= t('.no_question') %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+    <p class="pt-3">
+      <%= button_to t('.back'), tests_path, method: :get, type: "button", class: "btn btn-outline-secondary" %>
     </p>
-  <% end %>
-  <%= form.submit t('.submit')%>
-<% end %>
-
-<p>
-  | <%= link_to t('.back'), tests_path %> |
-</p>
+  </div>
+</div>

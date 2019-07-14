@@ -1,11 +1,15 @@
-<h1><%= t('.header', question: @answer.question.body) %></h1>
+<div class="row justify-content-center">
+  <div class="col col-md-10 col-lg-8 table-responsive">
+    <h1 class="pt-3 pb-3 heading"><%= t('.header', question: @answer.question.body) %></h1>
+    <p>
+      <strong><%= t('.answer') %>: </strong><span class="text-primary"><%= @answer.body %></span>
+    </p>
+    <p>
+      <strong><%= t('.correct') %>: </strong><span class="text-primary"><%= @answer.correct %></span>
+    </p>
 
-<p>
-  <strong><%= t('.answer') %>: </strong><%= @answer.body %>
-</p>
-<p>
-  <strong><%= t('.correct') %>: </strong><%= @answer.correct %>
-</p>
-
-<%= link_to t('.edit'), edit_admin_answer_path(@answer) %> |
-<%= link_to t('.back'), admin_question_path(@answer.question) %>
+    <p>
+      <%= button_to t('.back'), admin_question_path(@answer.question), method: :get, class: 'btn btn-secondary btn-down' %>
+    </p>
+  </div>
+</div>
