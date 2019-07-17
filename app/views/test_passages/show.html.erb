@@ -17,6 +17,9 @@
                 <%= c.label %>
               </p>
             <% end %>
+            <p>
+              <%= link_to 'Create gist', gist_test_passage_path(@test_passage), method: :post %>
+            </p>
             <%= form.submit t('.submit'), class: 'btn btn-primary' %>
           <% end %>
         <% else %>
