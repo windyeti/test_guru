@@ -1,6 +1,7 @@
 class Admin::TestsController < Admin::BaseController
 
   before_action :find_test, only: [:show, :edit, :update, :destroy]
+  before_action :find_gists, only: [:index]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found_test
 
@@ -46,6 +47,10 @@ class Admin::TestsController < Admin::BaseController
 
   def find_test
     @test = Test.find(params[:id])
+  end
+
+  def find_gists
+    @gists = Gist.all
   end
 
   def rescue_with_not_found_test

@@ -32,17 +32,26 @@ ru:
       many: "%{count} ошибок"
       one: "%{count} ошибка"
       other: "%{count} ошибок"
+    gists:
+      gist:
+        link_to_gist: "Ссылка на Gist"
     tests:
       index:
         header: "Тесты"
         create_test: "Создать тест"
 
-        id: "Идент."
+        id: "№"
         title: "Название"
         level: "Уровень"
         category: "Категория"
         count_questions: "Вопросов"
         actions: "Действия"
+
+        header_gist: "Список созданных Gist"
+        table_id_gist: "№"
+        table_link_to_question: "Ссылка на вопрос"
+        table_link_to_gist: "Ссылка на Gist"
+        table_email_author_gist: "Email автора"
 
       test:
         show: "Показать"
