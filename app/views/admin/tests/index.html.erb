@@ -1,6 +1,10 @@
 <div class="row justify-content-center mb-3">
   <div class="col col-md-10 col-lg-8 table-responsive">
-    <h1 class="pt-3 pb-3 heading"><%= t('.header') %></h1>
+    <h1 class="pt-3 pb-3 heading"><%= t('.header') %>
+      <span class="float-right">
+        <%= button_to t('.link_to_gists'), admin_gists_path, method: :get, class: 'btn btn-small btn-outline-info' %>
+      </span>
+    </h1>
     <p>
       | <%= link_to t('.create_test'), new_admin_test_path %> |
     </p>
@@ -14,20 +18,6 @@
         <th colspan="3"><%= t('.actions') %></th>
       </tr>
       <%= render @tests %>
-    </table>
-  </div>
-  <div class="col col-md-10 col-lg-8 table-responsive">
-    <h1 class="pt-3 pb-3 heading"><%= t('.header_gist') %></h1>
-    <p>
-    </p>
-    <table class="table table-striped table-borderless table-hover ">
-      <tr class="thead-dark">
-        <th scope="col"><%= t('.table_id_gist') %></th>
-        <th scope="col"><%= t('.table_link_to_question') %></th>
-        <th scope="col"><%= t('.table_link_to_gist') %></th>
-        <th scope="col"><%= t('.table_email_author_gist') %></th>
-      </tr>
-      <%= render @gists %>
     </table>
   </div>
 </div>

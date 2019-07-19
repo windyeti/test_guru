@@ -1,6 +1,6 @@
 <tr>
   <td><%= gist.id %></td>
-  <td><%= link_to "#{gist.question[:body][0, 25]}", admin_question_path(gist.question) %></td>
-  <td><%= link_to t('.link_to_gist'), gist.url, target: '_blank' %></td>
+  <td><%= link_to "#{gist.question[:body].truncate(28)}", admin_question_path(gist.question) %></td>
+  <td><%= link_to "#{gist.url.split('/').last}", gist.url, target: '_blank' %></td>
   <td><%= gist.user[:email] %></td>
 </tr>
