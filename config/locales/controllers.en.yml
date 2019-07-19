@@ -10,3 +10,6 @@ en:
   tests:
     rescue_with_not_found_test:
       not_found_test: "Not found test"
+  services:
+    gist_question_services:
+      description: "Question of test %{title}"

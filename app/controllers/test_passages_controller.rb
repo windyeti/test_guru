@@ -20,12 +20,7 @@ class TestPassagesController < ApplicationController
 
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
-p "++++++++++++++++++++++++"
-p result
-p Gist
-    p @test_passage.current_question[:id]
-    p @test_passage.user_id
-p "++++++++++++++++++++++++"
+
     flash_option = if url?(result)
         Gist.create(
             question_id: @test_passage.current_question[:id],
