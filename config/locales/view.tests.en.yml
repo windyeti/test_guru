@@ -1,5 +1,8 @@
 en:
   test_passages:
+    gist:
+      success: "<a href=\"%{url}\" target=_blank title=\"Link to Gist\">Gist</a> create"
+      failure: "Gist failure"
     show:
       submit: "Next question"
       header: "Passage the test"

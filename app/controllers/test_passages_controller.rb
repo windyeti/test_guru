@@ -1,4 +1,4 @@
-require 'gits_question_service'
+# require 'gits_question_service'
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: [:show, :update, :result, :gist]
 
@@ -20,11 +20,12 @@ class TestPassagesController < ApplicationController
 
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
-
-    flash_option = if result.success?
-          { notice: "Удачно добавлено" }
+p "++++++++++++++++++++++++"
+p result
+    flash_option = if url?(result)
+          { notice: t('.success', url: result[:html_url]) }
        else
-         { alert: "Ошибка при добавлении" }
+         { alert: t('.failure') }
        end
 
     redirect_to @test_passage, flash_option
@@ -34,5 +35,9 @@ class TestPassagesController < ApplicationController
 
   def find_test_passage
     @test_passage = TestPassage.find(params[:id])
+  end
+
+  def url?(result)
+    result[:html_url].present?
   end
 end

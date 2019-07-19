@@ -2,7 +2,8 @@ class GistQuestionService
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client || OctoClient.new
+    # @client = client || GitHubClient.new
   end
 
   def call
@@ -11,10 +12,10 @@ class GistQuestionService
 
   def gist_params
     {
-        description: "Question of test #{@test}",
+        description: "Question of test #{@test.title}",
         public: true,
         files: {
-            "question_and_answers.txt" => {
+            "question.txt" => {
                 content: content_question
             }
         }
@@ -26,6 +27,6 @@ class GistQuestionService
   def content_question
     content = [@question.body]
     content += @question.answers.pluck(:body)
-    content.join('\n')
+    content.join("\n")
   end
 end
