@@ -1,13 +1,32 @@
 class GistQuestionService
-  def initialize(question, client: nil)
+  class Result
+    def initialize(response)
+      @response = response
+    end
+
+    def success?
+      @response[:html_url].present?
+    end
+
+    def gist_url
+      @response[:html_url]
+    end
+  end
+
+  def initialize(question, client: default_client)
     @question = question
     @test = @question.test
-    @client = client || OctoClient.new
-    # @client = client || GitHubClient.new
+    @client = client
+  end
+
+  def default_client
+    OctokitClient.new
+    # GitHubClient.new
   end
 
   def call
-    @client.create_gist(gist_params)
+    response = @client.create_gist(gist_params)
+    Result.new(response)
   end
 
   def gist_params
