@@ -31,4 +31,4 @@
 /config/master.key
 proba.rb
 
-.env
+# .env
