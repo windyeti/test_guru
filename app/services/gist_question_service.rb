@@ -1,18 +1,4 @@
 class GistQuestionService
-  class Result
-    def initialize(response)
-      @response = response
-    end
-
-    def success?
-      @response[:html_url].present?
-    end
-
-    def gist_url
-      @response[:html_url]
-    end
-  end
-
   def initialize(question, client: default_client)
     @question = question
     @test = @question.test
@@ -39,6 +25,20 @@ class GistQuestionService
             }
         }
     }
+  end
+
+  class Result
+    def initialize(response)
+      @response = response
+    end
+
+    def success?
+      @response[:html_url].present?
+    end
+
+    def gist_url
+      @response[:html_url]
+    end
   end
 
   private
