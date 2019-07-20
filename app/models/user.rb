@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
   has_many :created_tests, class_name: "Test"
 
+  has_many :gists
+
   devise :database_authenticatable,
          :registerable,
          :recoverable,

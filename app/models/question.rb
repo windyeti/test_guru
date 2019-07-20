@@ -3,5 +3,7 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy, inverse_of: :question
   has_many :test_passages
 
+  has_many :gists
+
   validates :body, presence: true
 end

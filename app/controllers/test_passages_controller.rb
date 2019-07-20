@@ -1,5 +1,6 @@
+# require 'gits_question_service'
 class TestPassagesController < ApplicationController
-  before_action :find_test_passage, only: [:show, :update, :result]
+  before_action :find_test_passage, only: [:show, :update, :result, :gist]
 
   def show; end
 
@@ -15,6 +16,23 @@ class TestPassagesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    service = GistQuestionService.new(@test_passage.current_question)
+    result = service.call
+
+    if result.success?
+      Gist.create(
+          question_id: @test_passage.current_question[:id],
+          user_id: @test_passage.user_id,
+          url: result.gist_url
+      )
+      flash[:notice] = t('.success', url: result.gist_url)
+    else
+      flash[:alert] = t('.failure')
+    end
+    redirect_to @test_passage
   end
 
   private

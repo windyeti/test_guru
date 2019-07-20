@@ -1,6 +1,10 @@
 <div class="row justify-content-center mb-3">
   <div class="col col-md-10 col-lg-8 table-responsive">
-    <h1 class="pt-3 pb-3 heading"><%= t('.header') %></h1>
+    <h1 class="pt-3 pb-3 heading"><%= t('.header') %>
+      <span class="float-right">
+        <%= button_to t('.link_to_gists'), admin_gists_path, method: :get, class: 'btn btn-small btn-outline-info' %>
+      </span>
+    </h1>
     <p>
       | <%= link_to t('.create_test'), new_admin_test_path %> |
     </p>

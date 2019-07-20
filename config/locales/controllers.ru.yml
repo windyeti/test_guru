@@ -10,3 +10,7 @@ ru:
   tests:
     rescue_with_not_found_test:
       not_found_test: "Тест не найден"
+  services:
+    gist_question_services:
+      description: "Вопрос из теста %{title}"
+
