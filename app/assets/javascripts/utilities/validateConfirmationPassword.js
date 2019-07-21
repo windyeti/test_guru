@@ -2,45 +2,39 @@ document.addEventListener('turbolinks:load', function() {
   var field_confirmation = document.getElementById('user_password_confirmation');
   var field_password = document.getElementById('user_password');
   field_confirmation.addEventListener('input', validationConfirmationPassword)
-  field_password.addEventListener('input', validationPassword)
+  field_password.addEventListener('input', validationConfirmationPassword)
 });
 
 function validationConfirmationPassword() {
-  var value_password = document.getElementById('user_password').value;
-  var value_confirmation = this.value;
-
-  var issue_opened = this.parentNode.querySelector('.octicon-issue-opened');
-  var issue_closed = this.parentNode.querySelector('.octicon-issue-closed');
-
-  if (value_confirmation === value_password) {
-    issue_opened.classList.add('hide');
-    issue_closed.classList.remove('hide');
-  }
-  else {
-    issue_opened.classList.remove('hide');
-    issue_closed.classList.add('hide');
-  }
-
-  if (value_confirmation === '') {
-    issue_opened.classList.add('hide');
-    issue_closed.classList.add('hide');
-  }
-}
-
-function validationPassword() {
+  var field_password = document.getElementById('user_password');
   var field_confirmation = document.getElementById('user_password_confirmation');
-  var value_confirmation = field_confirmation.value;
-  var value_password = this.value;
 
-  var issue_opened = field_confirmation.parentNode.querySelector('.octicon-issue-opened');
-  var issue_closed = field_confirmation.parentNode.querySelector('.octicon-issue-closed');
+  var value_password = field_password.value;
+  var value_confirmation = field_confirmation.value;
 
   if (value_confirmation === value_password && value_password !== '') {
-    issue_opened.classList.add('hide');
-    issue_closed.classList.remove('hide');
+    show_sign('issue-closed')
   }
   else {
+    show_sign('issue-opened')
+  }
+
+  if (value_confirmation === '') show_sign(null);
+}
+
+function show_sign(sign) {
+  var issue_opened = document.querySelector('.octicon-issue-opened');
+  var issue_closed = document.querySelector('.octicon-issue-closed');
+  var arrSign = [issue_opened, issue_closed];
+
+  arrSign.forEach(function(sign) {
+    sign.classList.add('hide')
+  });
+  if (sign === 'issue-opened') {
     issue_opened.classList.remove('hide');
-    issue_closed.classList.add('hide');
+  }
+  if (sign === 'issue-closed') {
+    issue_closed.classList.remove('hide');
   }
 }
+
