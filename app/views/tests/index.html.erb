@@ -4,7 +4,11 @@
     <table class="table table-striped table-borderless table-hover ">
       <tr class="thead-dark">
         <th scope="col"><%= t('.id') %></th>
-        <th scope="col"><%= t('.title') %></th>
+        <th scope="col" class="head_control">
+          <%= t('.title') %>
+          <%= octicon "arrow-small-up", :height => 20,  class: "head_arrow hide" %>
+          <%= octicon "arrow-small-down", :height => 20,  class: "head_arrow hide" %>
+        </th>
         <th scope="col"><%= t('.level') %></th>
         <th scope="col"><%= t('.category') %></th>
         <th scope="col"><%= t('.count_questions') %></th>
