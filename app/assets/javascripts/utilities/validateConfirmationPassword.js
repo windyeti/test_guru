@@ -1,8 +1,13 @@
 document.addEventListener('turbolinks:load', function() {
   var field_confirmation = document.getElementById('user_password_confirmation');
   var field_password = document.getElementById('user_password');
-  field_confirmation.addEventListener('input', validationConfirmationPassword)
-  field_password.addEventListener('input', validationConfirmationPassword)
+
+  document.querySelector('.octicon-issue-opened') && document.querySelector('.octicon-issue-closed') && initialize();
+
+  function initialize() {
+    field_confirmation.addEventListener('input', validationConfirmationPassword)
+    field_password.addEventListener('input', validationConfirmationPassword)
+  }
 });
 
 function validationConfirmationPassword() {

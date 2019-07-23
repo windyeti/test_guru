@@ -1,7 +1,16 @@
 <div class="row justify-content-center pt-3">
   <div class="col-12 col-md-10 col-lg-8">
     <div class="card">
-      <h1 class="card-header"><%= raw t('.header') %> <span class='badge badge-secondary'><%= @test_passage.test.title %></span></h1>
+      <h1 class="card-header">
+        <%= raw t('.header') %>
+        <span class='badge badge-secondary'>
+          <%= @test_passage.test.title %>
+        </span>
+        <%= content_tag :div,
+                        nil,
+                        class: 'card__progress_passage',
+                        data: { number_question: "#{@test_passage.number_question}", total_questions: "#{@test_passage.test.questions.count}" } %>
+      </h1>
       <div class="card-body">
         <% if @test_passage.test.questions.present? %>
           <p class="card-title">
@@ -30,7 +39,7 @@
       </div>
     </div>
     <p class="pt-3">
-      <%= button_to t('.back'), tests_path, method: :get, type: "button", class: "btn btn-outline-secondary" %>
+      <%= link_to t('.back'), tests_path, class: "btn btn-outline-secondary" %>
     </p>
   </div>
 </div>

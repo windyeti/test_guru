@@ -41,6 +41,8 @@ en:
       gist:
         link_to_gist: "Link to Gist"
     tests:
+      form_inline:
+        submit: "Update title"
       index:
         header: "Tests"
         create_test: "Create new test!"
@@ -65,6 +67,7 @@ en:
       show:
         header: "%{title} test"
         header_level: "Level %{level} test"
+        edit: "Edit"
 
         id: "ID"
         body_question: "Question"
