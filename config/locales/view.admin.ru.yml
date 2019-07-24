@@ -43,6 +43,8 @@ ru:
       gist:
         link_to_gist: "Ссылка на Gist"
     tests:
+      form_inline:
+        submit: "Oкей"
       index:
         header: "Тесты"
         create_test: "Создать тест"
@@ -73,6 +75,7 @@ ru:
       show:
         header: "%{title} тест"
         header_level: "Это тест уровня %{level}"
+        edit: "Редактировать"
 
         id: "№"
         body_question: "Вопрос"

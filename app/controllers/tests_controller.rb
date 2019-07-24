@@ -4,7 +4,7 @@ class TestsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_not_found_test
 
   def index
-    @tests = Test.all
+    @tests = Test.all.order(:id)
   end
 
   def start

@@ -1,8 +1,9 @@
-<% if resources.errors.present? %>
-  <h3><%= t('admin.error_header', count: resources.errors.count) %></h3>
-  <ul>
-    <% resources.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+<% if resources.present? && resources.errors.present? %>
+  <%= content_tag :div, nil, class: 'errors', data: { test_id: "#{resources.id}" }%>
+    <h3><%= t('admin.error_header', count: resources.errors.count) %></h3>
+    <ul>
+      <% resources.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
 <% end %>
