@@ -1,24 +1,24 @@
 document.addEventListener('turbolinks:load', function() {
-  document.querySelector('.card__progress_passage') && drawProgressBar();
+  document.querySelector('.card__progress-passage') && drawProgressBar();
 });
 
 function drawProgressBar() {
-  var progress_bar = document.querySelector('.card__progress_passage');
+  var progressBar = document.querySelector('.card__progress-passage');
 
-  var total_questions = progress_bar.dataset.totalQuestions;
-  var number_question = progress_bar.dataset.numberQuestion;
+  var totalQuestions = progressBar.dataset.totalQuestions;
+  var numberQuestion = progressBar.dataset.numberQuestion;
 
-  var progress_bar_inner = document.createElement('div');
-  progress_bar_inner.className = 'card__progress_passage__inner';
+  var progressBarInner = document.createElement('div');
+  progressBarInner.className = 'card__progress-passage__inner';
 
-  for( var i = 0; i < total_questions; i++ ) {
+  for( var i = 0; i < totalQuestions; i++ ) {
     var rectangle = document.createElement('div');
 
-    rectangle.className = 'card__progress_passage__rectangle bg-secondary';
-    if ( i < number_question - 1) rectangle.className += ' card__progress_passage__rectangle_ready bg-info';
-    if ( i === number_question - 1) rectangle.className += ' card__progress_passage__rectangle_current bg-warning';
+    rectangle.className = 'card__progress-passage__rectangle bg-secondary';
+    if ( i < numberQuestion - 1) rectangle.className += ' card__progress-passage__rectangle_ready bg-info';
+    if ( i === numberQuestion - 1) rectangle.className += ' card__progress-passage__rectangle_current bg-warning';
 
-    progress_bar_inner.appendChild(rectangle)
+    progressBarInner.appendChild(rectangle)
   }
-    progress_bar.appendChild(progress_bar_inner)
+  progressBar.appendChild(progressBarInner)
 }

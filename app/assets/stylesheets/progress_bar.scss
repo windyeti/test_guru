@@ -1,4 +1,4 @@
-.card__progress_passage {
+.card__progress-passage {
   margin-top: 10px;
   padding: 10px 5px;
   border: 1px solid #909090;
@@ -6,10 +6,10 @@
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
-.card__progress_passage__inner {
+.card__progress-passage__inner {
   display: flex;
 }
-.card__progress_passage__rectangle {
+.card__progress-passage__rectangle {
   width: 100%;
   height: 10px;
   margin: 0 5px;
@@ -17,7 +17,7 @@
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
-.card__progress_passage__rectangle_ready {
+.card__progress-passage__rectangle_ready {
 }
-.card__progress_passage__rectangle_current {
+.card__progress-passage__rectangle_current {
 }
