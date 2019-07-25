@@ -1,4 +1,4 @@
-class OctokitClient
+class Aaa
   def initialize
     @http_client = Octokit::Client.new(:access_token => "#{ENV['GIST_ACCESS_TOKEN']}")
   end
