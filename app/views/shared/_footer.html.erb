@@ -8,6 +8,9 @@
         <div>
           Egor Tikhanin
         </div>
+        <div class=" navbar-text mr-3" >
+          <%=  link_to t('.feedback'), admin_tests_path, class: 'btn btn-outline-primary' if current_user.present? && current_user.admin? %>
+        </div>
       </div>
       <div class="col-12 col-md-3">
           <%= link_to 'TestGuru', github_url('windyeti', 'test_guru'), target: "_blank" %>

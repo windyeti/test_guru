@@ -1,4 +1,7 @@
 en:
+  shared:
+    footer:
+      feedback: "Feedback"
   test_passages:
     gist:
       success: "<a href=\"%{url}\" target=_blank title=\"Link to Gist\">Gist</a> create"

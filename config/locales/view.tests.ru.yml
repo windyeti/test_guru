@@ -1,4 +1,7 @@
 ru:
+  shared:
+    footer:
+      feedback: "Обратная связь"
   test_passages:
     gist:
       success: "<a href=\"%{url}\" target=_blank title=\"ссылка на гист\">Gist</a> создан"
