@@ -1,0 +1,3 @@
+en:
+  result_tests_mailer:
+    subject: "You are just completed test %{title}"

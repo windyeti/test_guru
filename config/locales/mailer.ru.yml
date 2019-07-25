@@ -1,0 +1,3 @@
+ru:
+  result_tests_mailer:
+    subject: "Вы только что прошли тест %{title}"
