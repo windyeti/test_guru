@@ -1,6 +1,6 @@
 class ResultTestsMailer < ApplicationMailer
 
-  layout 'good'
+  layout 'good_mailer'
 
   def completed_test(test_passage)
     @user = test_passage.user

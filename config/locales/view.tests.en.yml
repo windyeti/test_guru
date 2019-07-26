@@ -1,4 +1,9 @@
 en:
+  feedbacks:
+    new:
+      feedback: "Form feedback"
+      title: "Title"
+      message: "Message"
   shared:
     footer:
       feedback: "Feedback"

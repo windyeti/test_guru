@@ -1,4 +1,9 @@
 ru:
+  feedbacks:
+    new:
+      feedback: "Форма обратной связи"
+      title: "Тема"
+      message: "Сообщение"
   shared:
     footer:
       feedback: "Обратная связь"

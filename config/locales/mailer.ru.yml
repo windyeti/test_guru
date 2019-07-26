@@ -1,3 +1,6 @@
 ru:
   result_tests_mailer:
     subject: "Вы только что прошли тест %{title}"
+  from: "Test_Guru Обратная связь"
+  feed_backs_mailer:
+    subject: "%{subject} от %{email}"
