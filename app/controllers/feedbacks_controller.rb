@@ -9,7 +9,7 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(params[:feedback])
     if @feedback.valid?
-      FeedBacksMailer.feedback_message(params).deliver_now
+      FeedBacksMailer.feedback_message(params[:feedback]).deliver_now
       redirect_to tests_path, notice: "Ваш запрос отправлен"
     else
       render :new
