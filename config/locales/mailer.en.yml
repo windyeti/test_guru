@@ -1,6 +1,5 @@
 en:
   result_tests_mailer:
     subject: "You are just completed test %{title}"
-  from: "Test_Guru Feedback"
   feed_backs_mailer:
     subject: "%{subject} from %{email}"
