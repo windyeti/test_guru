@@ -2,8 +2,10 @@ ru:
   feedbacks:
     new:
       feedback: "Форма обратной связи"
-      title: "Тема"
+      subject: "Тема"
+      email: "Email"
       message: "Сообщение"
+      submit: "Отправить"
   shared:
     footer:
       feedback: "Обратная связь"

@@ -1,11 +1,12 @@
 class FeedBacksMailer < ApplicationMailer
-  default from: "Test_Guru"
+  default from: "Test_Guru", to: "yegor.tikhanin@gmail.com"
   layout "feedback_mailer"
 
-  def feedback_message(message, user)
+  def feedback_message(message)
     @subject = message[:subject]
+    @email = message[:email]
     @body = message[:body]
 
-    mail to: 'yegor.tikhanin@gmail.com', subject: t('feed_backs_mailer.subject', subject: "#{@subject}", email: "#{user.email}")
+    mail subject: t('feed_backs_mailer.subject', subject: "#{@subject}", email: "#{@email}")
   end
 end

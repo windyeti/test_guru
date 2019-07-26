@@ -2,8 +2,10 @@ en:
   feedbacks:
     new:
       feedback: "Form feedback"
-      title: "Title"
+      subject: "Title"
+      email: "Email"
       message: "Message"
+      submit: "Send"
   shared:
     footer:
       feedback: "Feedback"

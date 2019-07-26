@@ -1,5 +1,6 @@
 <% if resources.present? && resources.errors.present? %>
-  <%= content_tag :div, nil, class: 'errors', data: { test_id: "#{resources.id}" }%>
+<!--  there is we check has method in resources (feedback has no .id) ===>>> resources.methods.include? 'id'-->
+  <%= content_tag :div, nil, class: 'errors', data: { test_id: "#{resources.id if resources.methods.include? 'id'}" }%>
     <h3><%= t('admin.error_header', count: resources.errors.count) %></h3>
     <ul>
       <% resources.errors.full_messages.each do |message| %>
