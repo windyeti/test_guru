@@ -2,6 +2,7 @@ ru:
   activerecord:
     models:
       test: "Тест"
+      feedback: "Форма обратной связи"
 
     attributes:
       test:
