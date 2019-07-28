@@ -1,0 +1,5 @@
+ru:
+  result_tests_mailer:
+    subject: "Вы только что прошли тест %{title}"
+  feed_backs_mailer:
+    subject: "%{subject} от %{email}"

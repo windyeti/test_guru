@@ -1,4 +1,14 @@
 en:
+  feedbacks:
+    new:
+      feedback: "Form feedback"
+      subject: "Title"
+      email: "Email"
+      message: "Message"
+      submit: "Send"
+  shared:
+    footer:
+      feedback: "Feedback"
   test_passages:
     gist:
       success: "<a href=\"%{url}\" target=_blank title=\"Link to Gist\">Gist</a> create"
