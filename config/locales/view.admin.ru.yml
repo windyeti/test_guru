@@ -10,8 +10,12 @@ ru:
       answer:
         body: "Ответ"
         correct: "Корректность"
+      badge:
+        title: "Название"
 
     submit:
+      badge:
+        create: "Создать бейдж"
       test:
         create: "Создать тест!"
         update: "Обновить тест!"
@@ -27,6 +31,10 @@ ru:
           hint: "Надо выбрать"
 
   admin:
+    badges:
+      new:
+        header: "Новый бейдж"
+        back: "Назад"
     error_header:
       few: "%{count} ошибки"
       many: "%{count} ошибок"

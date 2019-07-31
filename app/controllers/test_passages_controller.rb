@@ -1,4 +1,3 @@
-# require 'gits_question_service'
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: [:show, :update, :result, :gist]
 
@@ -11,6 +10,7 @@ class TestPassagesController < ApplicationController
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
+      Awards.new(@test_passage).check if @test_passage.successful_passage?
       ResultTestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else

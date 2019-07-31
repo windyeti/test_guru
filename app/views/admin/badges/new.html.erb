@@ -1,0 +1,30 @@
+<div class="row justify-content-center pt-3">
+  <div class="col-12 col-md-10 col-lg-8 mb-3">
+    <div class="card">
+      <h1 class="card-header"><%= t('.header') %></h1>
+      <div class="card-body">
+        <%= render partial: 'shared/errors', locals: { resources: @badge } %>
+        <%= form_with(model: [:admin, @badge], local: true) do |f| %>
+          <div class="form-group">
+            <%= f.label :rule %>
+            <%= f.select(:rule_id, [["Все тесты Backend", 1], ['С первой попытки', 2], ['Все тесты  одного уровня', 3]], {prompt: true}, {class: 'form-control'}) %>
+          </div>
+          <div class="form-group">
+            <%= f.label :image %>
+            <%= f.select(:image_id, [["Золотой", 1], ['Серебряный', 2], ['Бронзовый', 3]], {prompt: true}, {class: 'form-control'}) %>
+          </div>
+          <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <p class="pt-3">
+      <%= link_to t('.back'), admin_tests_path, class: "btn btn-outline-secondary" %>
+    </p>
+    <% if @badges.present? %>
+      <h4>Существующие бейджи</h4>
+      <div class="d-flex">
+        <%= render @badges  %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -9,7 +9,7 @@
       </div>
     </div>
     <p class="pt-3">
-      <%= button_to t('.back'), admin_question_path(@answer.question), method: :get, type: "button", class: "btn btn-outline-secondary" %>
+      <%= link_to t('.back'), admin_question_path(@answer.question), class: "btn btn-outline-secondary" %>
     </p>
   </div>
 </div>

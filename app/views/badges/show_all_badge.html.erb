@@ -1,0 +1,4 @@
+<h1>Все доступные бейджи</h1>
+<% Badge.all.each do |badge| %>
+  <%= render 'admin/badges/badge', badge: badge %>
+<% end %>
