@@ -5,13 +5,22 @@
       <div class="card-body">
         <%= render partial: 'shared/errors', locals: { resources: @badge } %>
         <%= form_with(model: [:admin, @badge], local: true) do |f| %>
-          <div class="form-group">
-            <%= f.label :rule %>
-            <%= f.select(:rule_id, [["Все тесты Backend", 1], ['С первой попытки', 2], ['Все тесты  одного уровня', 3]], {prompt: true}, {class: 'form-control'}) %>
+          <div class="card">
+            <h3 class="card-header">Правило</h3>
+            <div class="card-body">
+              <div class="form-group">
+                <%= f.label :rule %>
+                <%= f.select(:rule, Badge::RULE_TITLE, {prompt: true}, {class: 'form-control'}) %>
+              </div>
+              <div class="form-group">
+                <%= f.label :category %>
+                <%= f.select(:category, Category.all.pluck(:title), {prompt: true}, {class: 'form-control'}) %>
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <%= f.label :image %>
-            <%= f.select(:image_id, [["Золотой", 1], ['Серебряный', 2], ['Бронзовый', 3]], {prompt: true}, {class: 'form-control'}) %>
+            <%= f.select(:image, Badge::RULE_IMAGE, {prompt: true}, {class: 'form-control'}) %>
           </div>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>
@@ -22,7 +31,7 @@
     </p>
     <% if @badges.present? %>
       <h4>Существующие бейджи</h4>
-      <div class="d-flex">
+      <div class="d-flex mb-3">
         <%= render @badges  %>
       </div>
     <% end %>

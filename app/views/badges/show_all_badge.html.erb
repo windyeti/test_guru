@@ -1,4 +1,6 @@
 <h1>Все доступные бейджи</h1>
-<% Badge.all.each do |badge| %>
-  <%= render 'admin/badges/badge', badge: badge %>
-<% end %>
+<div class="d-flex mb-3">
+  <% Badge.all.each do |badge| %>
+    <%= render 'admin/badges/badge', badge: badge %>
+  <% end %>
+</div>

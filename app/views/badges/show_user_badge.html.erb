@@ -1,5 +1,7 @@
 <h1>Это бейджи <%= current_user.email %></h1>
-<% current_user.badges.each do |badge| %>
-  <%= render 'admin/badges/badge', badge: badge %>
-<% end %>
+<div class="d-flex mb-3">
+  <% current_user.badges.each do |badge| %>
+    <%= render 'admin/badges/badge', badge: badge %>
+  <% end %>
+</div>
 

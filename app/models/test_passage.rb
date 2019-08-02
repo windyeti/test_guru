@@ -26,7 +26,7 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count.to_f) * 100
   end
 
-  def successful_passage?
+  def successful?
     percentage_passage >= 85
   end
 

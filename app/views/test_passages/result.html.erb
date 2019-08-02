@@ -5,7 +5,7 @@
       <div class="card-body">
         <% percentage = @test_passage.percentage_passage.to_i %>
         <div class="card-text">
-          <% if @test_passage.successful_passage? %>
+          <% if @test_passage.successful? %>
             <h5 class="text-success"><%= t('.success', percentage: percentage) %></h5>
           <% else %>
             <h5 class="text-danger"><%= t('.failed', percentage: percentage) %></h5>

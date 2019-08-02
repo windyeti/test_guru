@@ -2,12 +2,19 @@ class Awards
   def initialize(test)
     @test = test
     @user = test.user
+    @badges = []
   end
-  def check
-    @user.badges << Badge.find_by(rule_id: 1) if passage_category_backend && !@user.badges.include?(Badge.find_by(rule_id: 1))
-    @user.badges << Badge.find_by(rule_id: 2) if first_attempt_ok
-    passage_test_level.times { @user.badges << Badge.find_by(rule_id: 3) }
 
+  def check
+    if @test.successful?
+      Badge.all.each do |badge|
+        send("#{badge.rule}", @user)
+      end
+      # @badges << Badge.find_by(rule_id: 1) if passage_category_backend && !@user.badges.include?(Badge.find_by(rule_id: 1))
+      # @badges << Badge.find_by(rule_id: 2) if first_attempt_ok
+      # passage_test_level.times { @badges << Badge.find_by(rule_id: 3) }
+    end
+    @badges
   end
 
   def passage_category_backend
