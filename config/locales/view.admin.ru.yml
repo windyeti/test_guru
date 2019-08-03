@@ -12,6 +12,9 @@ ru:
         correct: "Корректность"
       badge:
         title: "Название"
+        rule: "Правило получения бейджа"
+        category: "Категория"
+        image: "Изображение"
 
     submit:
       badge:
@@ -29,12 +32,16 @@ ru:
       admin:
         test:
           hint: "Надо выбрать"
+        badge:
+          hint: "Надо выбрать"
 
   admin:
     badges:
       new:
         header: "Новый бейдж"
+        rule: "Правило"
         back: "Назад"
+        exist_badges: "Существующие бейджи"
     error_header:
       few: "%{count} ошибки"
       many: "%{count} ошибок"

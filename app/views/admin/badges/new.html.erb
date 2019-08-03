@@ -6,21 +6,21 @@
         <%= render partial: 'shared/errors', locals: { resources: @badge } %>
         <%= form_with(model: [:admin, @badge], local: true) do |f| %>
           <div class="card">
-            <h3 class="card-header">Правило</h3>
+            <h3 class="card-header"><%= t('.rule') %></h3>
             <div class="card-body">
               <div class="form-group">
                 <%= f.label :rule %>
-                <%= f.select(:rule, Badge::RULE_TITLE, {prompt: true}, {class: 'form-control'}) %>
+                <%= f.select(:rule, Badge::RULE_TITLE, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
               </div>
               <div class="form-group">
                 <%= f.label :category %>
-                <%= f.select(:category, Category.all.pluck(:title), {prompt: true}, {class: 'form-control'}) %>
+                <%= f.select(:category, Category.all.pluck(:title), {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
               </div>
             </div>
           </div>
           <div class="form-group">
             <%= f.label :image %>
-            <%= f.select(:image, Badge::RULE_IMAGE, {prompt: true}, {class: 'form-control'}) %>
+            <%= f.select(:image, Badge::RULE_IMAGE, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
           </div>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>
@@ -30,7 +30,7 @@
       <%= link_to t('.back'), admin_tests_path, class: "btn btn-outline-secondary" %>
     </p>
     <% if @badges.present? %>
-      <h4>Существующие бейджи</h4>
+      <h4><%= t('.exist_badges') %></h4>
       <div class="d-flex mb-3">
         <%= render @badges  %>
       </div>

@@ -1,4 +1,9 @@
 ru:
+  badges:
+    show_user_badges:
+      owner_badges: "Это бейджи"
+    show_all_badge:
+      exist_badges: "Доступные бейджи"
   feedbacks:
     new:
       feedback: "Форма обратной связи"
@@ -7,6 +12,11 @@ ru:
       message: "Сообщение"
       submit: "Отправить"
   shared:
+    nav:
+      admin_panel: "Админ панель"
+      badge_panel: "Бейдж панель"
+      own_badges: "Полученные бейджи"
+      sample_badges: "Доступные бейджи"
     footer:
       feedback: "Обратная связь"
   test_passages:

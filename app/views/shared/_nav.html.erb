@@ -2,18 +2,21 @@
   <%= link_to 'Хочу все знать!', root_path, class: 'navbar-brand' %>
   <% if current_user.present? && current_user.admin? %>
     <div class=" navbar-text mr-3" >
-      <%=  link_to 'Admin Panel', admin_tests_path, class: 'btn btn-outline-light' %>
+      <%=  link_to t('.admin_panel'), admin_tests_path, class: 'btn btn-outline-light' %>
     </div>
     <div class=" navbar-text mr-3" >
-      <%=  link_to 'Badge Panel', new_admin_badge_path, class: 'btn btn-outline-light' %>
+       |
+    </div>
+    <div class=" navbar-text mr-3" >
+      <%=  link_to t('.badge_panel'), new_admin_badge_path, class: 'btn btn-primary' %>
     </div>
   <% end %>
   <% if current_user.present?%>
     <div class=" navbar-text mr-3" >
-      <%=  link_to 'Own Badges', show_user_badge_path, class: 'btn btn-info' %>
+      <%=  link_to t('.own_badges'), show_user_badge_path, class: 'btn btn-info' %>
     </div>
     <div class=" navbar-text mr-3" >
-      <%=  link_to 'All Badges', show_all_badge_path, class: 'btn btn-warning' %>
+      <%=  link_to t('.sample_badges'), show_all_badge_path, class: 'btn btn-warning' %>
     </div>
   <% end %>
   <div class=" navbar-text" >
