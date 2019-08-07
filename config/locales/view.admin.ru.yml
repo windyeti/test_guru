@@ -13,7 +13,7 @@ ru:
       badge:
         title: "Название"
         rule: "Правило получения бейджа"
-        category: "Категория"
+        rule_value: "Значение для правила"
         image: "Изображение"
 
     submit:
@@ -36,12 +36,19 @@ ru:
           hint: "Надо выбрать"
 
   admin:
+    badge:
+      all_tests_category: "Все тесты категории"
+      first_attempt_ok: "С первой попытки"
+      all_tests_level: "Все тесты одного уровня"
+      errors: "Правила нет в списке допущенных"
     badges:
       new:
         header: "Новый бейдж"
         rule: "Правило"
         back: "Назад"
         exist_badges: "Существующие бейджи"
+      show:
+        header: "Создан бейдж №"
     error_header:
       few: "%{count} ошибки"
       many: "%{count} ошибок"

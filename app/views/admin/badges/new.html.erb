@@ -13,8 +13,8 @@
                 <%= f.select(:rule, Badge::RULE_TITLE, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
               </div>
               <div class="form-group">
-                <%= f.label :category %>
-                <%= f.select(:category, Category.all.pluck(:title), {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
+                <%= f.label :rule_value %>
+                <%= f.select(:rule_value, list_rule_value, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
               </div>
             </div>
           </div>

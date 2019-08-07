@@ -13,7 +13,7 @@ en:
       badge:
         title: "Title"
         rule: "Rule"
-        category: "Category"
+        rule_value: "Rule value"
         image: "Image"
 
     submit:
@@ -36,12 +36,19 @@ en:
           hint: "Choose..."
 
   admin:
+    badge:
+      all_tests_category: "For all tests category"
+      first_attempt_ok: "Successfully on the first attempt"
+      all_tests_level: "For all tests level"
+      errors: "There is no the rule in whitelist"
     badges:
       new:
         header: "Badge New"
         rule: "Rule"
         back: "Back"
         exist_badges: "Existing badges"
+      show:
+        header: "Create badge #"
     error_header:
       one: "%{count} error"
       other: "%{count} errors"
