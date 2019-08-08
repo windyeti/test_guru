@@ -37,9 +37,13 @@ ru:
 
   admin:
     badge:
+      rule: "%{text}"
       all_tests_category: "Все тесты категории"
       first_attempt_ok: "С первой попытки"
       all_tests_level: "Все тесты одного уровня"
+      gold: "Золотой"
+      silver: "Серебряный"
+      bronze: "Бронзовый"
       errors: "Правила нет в списке допущенных"
     badges:
       new:
@@ -49,6 +53,8 @@ ru:
         exist_badges: "Существующие бейджи"
       show:
         header: "Создан бейдж №"
+      create:
+        notice: "Бейдж создан"
     error_header:
       few: "%{count} ошибки"
       many: "%{count} ошибок"

@@ -8,7 +8,7 @@ class Admin::BadgesController < Admin::BaseController
   def create
     @badge = Badge.new(badge_params)
     if @badge.save
-      redirect_to [:admin, @badge], notice: "Badge have been create"
+      redirect_to [:admin, @badge], notice: t('.notice')
     else
       render :new
     end
