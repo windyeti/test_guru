@@ -37,7 +37,6 @@ en:
 
   admin:
     badge:
-      rule: "%{text}"
       all_tests_category: "For all tests category"
       first_attempt_ok: "Successfully on the first attempt"
       all_tests_level: "For all tests level"

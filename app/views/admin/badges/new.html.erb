@@ -10,7 +10,7 @@
             <div class="card-body">
               <div class="form-group">
                 <%= f.label :rule %>
-                <%= f.select(:rule, rule_to_invert_array(BadgesHelper::RULE_TITLE), {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
+                <%= f.select(:rule, rules_titles, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
               </div>
               <div class="form-group">
                 <%= f.label :rule_value %>
@@ -20,7 +20,7 @@
           </div>
           <div class="form-group">
             <%= f.label :image %>
-            <%= f.select(:image, rule_to_invert_array(BadgesHelper::RULE_IMAGE), {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
+            <%= f.select(:image, rules_images, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
           </div>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>

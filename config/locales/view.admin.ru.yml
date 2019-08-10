@@ -37,7 +37,6 @@ ru:
 
   admin:
     badge:
-      rule: "%{text}"
       all_tests_category: "Все тесты категории"
       first_attempt_ok: "С первой попытки"
       all_tests_level: "Все тесты одного уровня"
