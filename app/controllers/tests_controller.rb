@@ -9,7 +9,11 @@ class TestsController < ApplicationController
 
   def start
     current_user.tests << @test
-    redirect_to  current_user.test_passage(@test)
+    Thread.new do
+      sleep 5
+      redirect_to result_test_passage_path(@test_passage) and return
+    end
+    redirect_to current_user.test_passage(@test) and return
   end
 
   private
