@@ -7,6 +7,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.passed = true if successful?
     save!
   end
 
@@ -26,7 +27,7 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count.to_f) * 100
   end
 
-  def successful_passage?
+  def successful?
     percentage_passage >= 85
   end
 

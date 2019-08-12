@@ -1,0 +1,39 @@
+<div class="row justify-content-center pt-3">
+  <div class="col-12 col-md-10 col-lg-8 mb-3">
+    <div class="card">
+      <h1 class="card-header"><%= t('.header') %></h1>
+      <div class="card-body">
+        <%= render partial: 'shared/errors', locals: { resources: @badge } %>
+        <%= form_with(model: [:admin, @badge], local: true) do |f| %>
+          <div class="card">
+            <h3 class="card-header"><%= t('.rule') %></h3>
+            <div class="card-body">
+              <div class="form-group">
+                <%= f.label :rule %>
+                <%= f.select(:rule, rules_titles, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
+              </div>
+              <div class="form-group">
+                <%= f.label :rule_value %>
+                <%= f.select(:rule_value, list_rule_value, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.label :image %>
+            <%= f.select(:image, rules_images, {prompt: t('helpers.select.admin.badge.hint')}, {class: 'form-control'}) %>
+          </div>
+          <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <p class="pt-3">
+      <%= link_to t('.back'), admin_tests_path, class: "btn btn-outline-secondary" %>
+    </p>
+    <% if @badges.present? %>
+      <h4><%= t('.exist_badges') %></h4>
+      <div class="d-flex mb-3">
+        <%= render @badges  %>
+      </div>
+    <% end %>
+  </div>
+</div>

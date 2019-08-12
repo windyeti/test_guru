@@ -10,8 +10,15 @@ en:
       answer:
         body: "Answer"
         correct: "Correct"
+      badge:
+        title: "Title"
+        rule: "Rule"
+        rule_value: "Rule value"
+        image: "Image"
 
     submit:
+      badge:
+        create: "Create Badge"
       test:
         create: "Create test!"
         update: "Update test!"
@@ -24,9 +31,29 @@ en:
     select:
       admin:
         test:
-          hint: "Choose"
+          hint: "Choose..."
+        badge:
+          hint: "Choose..."
 
   admin:
+    badge:
+      all_tests_category: "For all tests category"
+      first_attempt_ok: "Successfully on the first attempt"
+      all_tests_level: "For all tests level"
+      gold: "Gold"
+      silver: "Silver"
+      bronze: "Bronze"
+      errors: "There is no the rule in whitelist"
+    badges:
+      new:
+        header: "Badge New"
+        rule: "Rule"
+        back: "Back"
+        exist_badges: "Existing badges"
+      show:
+        header: "Create badge #"
+      create:
+        notice: "Badge have been create"
     error_header:
       one: "%{count} error"
       other: "%{count} errors"

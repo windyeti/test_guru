@@ -1,0 +1,7 @@
+<h1 class="mt-3 mb-2"><%= t('badges.show_user_badges.owner_badges') %> <%= current_user.email %></h1>
+<div class="d-flex mb-3">
+  <% current_user.badges.each do |badge| %>
+    <%= render 'admin/badges/badge', badge: badge %>
+  <% end %>
+</div>
+

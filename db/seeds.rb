@@ -16,8 +16,6 @@ def parent_category(list, hash)
   objs.first.id
 end
 
-# users = User.create!([{email: 'egor@mail.ru'}, {email: 'jora@mail.ru'}])
-
 categories = Category.create!([{title: 'Frontend'}, {title: 'Backend'}, {title: 'WEB'}])
 tests = Test.create!([
     {title: 'HTML', level: 1, user_id: 1, category_id: parent_category(categories, title: 'Frontend')},
@@ -96,15 +94,3 @@ answers = Answer.create!([
     {body: 'Старый обряд', question_id: parent_category(questions, body: 'HTTP это...(2)')},
     {body: 'Протокол передачи гипертекста', question_id: parent_category(questions, body: 'HTTP это...(2)')}
   ])
-
-# TestsUser.create!([
-#     {user_id: users[0].id, test_id: tests[1].id},
-#     {user_id: users[0].id, test_id: tests[2].id},
-#     {user_id: users[0].id, test_id: tests[3].id},
-#     {user_id: users[0].id, test_id: tests[4].id},
-#     {user_id: users[0].id, test_id: tests[5].id},
-#     {user_id: users[1].id, test_id: tests[3].id},
-#     {user_id: users[1].id, test_id: tests[4].id},
-#     {user_id: users[1].id, test_id: tests[5].id},
-#     {user_id: users[1].id, test_id: tests[6].id}
-#   ])

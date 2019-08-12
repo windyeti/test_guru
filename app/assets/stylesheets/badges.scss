@@ -1,0 +1,31 @@
+.awards {
+  border: 1px solid #B00100;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 0 10px;
+  padding: 20px;
+  width: 166px;
+  height: 250px;
+}
+.awards__header {
+  font-size: 70%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.awards__pic {
+}
+.awards__image {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
+.awards_gold {
+  background-color: #ffd647;
+}
+.awards_silver {
+  background-color: #b8d8ff;
+}
+.awards_bronze {
+  background-color: #ff6b6b;
+}

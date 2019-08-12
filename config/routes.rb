@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'feedbacks/new'
-  get 'feedbacks/create'
   root to: 'tests#index'
+
+  get 'show_user_badge', to: 'badges#show_user_badge'
+  get 'show_all_badge', to: 'badges#show_all_badge'
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }, controllers: {sessions: "users/sessions"}
 
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :badges, shallow: true, only: [:new, :create, :show]
     resources :gists, shallow: true, only: :index
     resources :tests do
       patch :update_inline, on: :member

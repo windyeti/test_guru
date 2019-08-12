@@ -1,0 +1,6 @@
+<h1 class="mt-3 mb-2"><%= t('.exist_badges') %></h1>
+<div class="d-flex mb-3">
+  <% Badge.all.each do |badge| %>
+    <%= render 'admin/badges/badge', badge: badge %>
+  <% end %>
+</div>

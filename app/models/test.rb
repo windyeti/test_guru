@@ -17,6 +17,10 @@ class Test < ApplicationRecord
     with_category(category).pluck(:title)
   end
 
+  def self.ids_test_category(category)
+    with_category(category).unscope(:order).pluck(:id)
+  end
+
   validates :title, presence: true
   validates :level, numericality: { greater_than: 0, only_integer: true }
   validates :title, uniqueness: { scope: :level }

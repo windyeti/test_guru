@@ -1,4 +1,9 @@
 en:
+  badges:
+    show_user_badges:
+      owner_badges: "Owner badges"
+    show_all_badge:
+      exist_badges: "Existing badges"
   feedbacks:
     new:
       feedback: "Form feedback"
@@ -7,6 +12,11 @@ en:
       message: "Message"
       submit: "Send"
   shared:
+    nav:
+      admin_panel: "Admin Panel"
+      badge_panel: "Badge Panel"
+      own_badges: "Own Badges"
+      sample_badges: "Sample Badges"
     footer:
       feedback: "Feedback"
   test_passages:
