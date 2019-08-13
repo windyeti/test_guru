@@ -8,7 +8,6 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     self.passed = true if successful?
-    self.start_time_passage = Time.current
     save!
   end
 
@@ -38,21 +37,11 @@ class TestPassage < ApplicationRecord
 
   def set_current_question
     if new_record?
-      nil if current_question.nil?
-    elsif persisted? && current_question.nil?
-      test.questions.first
+      test.questions.first if current_question.nil?
     else
       test.questions.order(:id).where("id > ?", current_question.id).first
     end
   end
-
-  # def set_current_question
-  #   if new_record?
-  #     test.questions.first if current_question.nil?
-  #   else
-  #     test.questions.order(:id).where("id > ?", current_question.id).first
-  #   end
-  # end
 
   private
 

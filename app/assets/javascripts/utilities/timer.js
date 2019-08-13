@@ -1,14 +1,17 @@
 document.addEventListener('turbolinks:load', function() {
-  document.querySelector('#timer') && runTimer();
+  document.querySelector('#timer') && testTimer();
 });
 
-function runTimer() {
+function testTimer() {
   var timer = document.querySelector('#timer');
-  var testPassageId = timer.dataset.testPassageId;
-  setInterval(function() { timeout(timer, testPassageId) },1000)
+  var timeRest = timer.dataset.timeRest;
+  setInterval(function() {
+    timeRest = decrement(timeRest);
+    timer.innerHTML = Math.round(timeRest);
+    if (timeRest <= 0) $("#form_test_passage").submit();
+  },1000)
 }
 
-function timeout(timer, testPassageId) {
-  timer.textContent -= 1;
-  if (timer.textContent <= 0) window.location.replace(`/test_passages/${testPassageId}/result`)
+function decrement(value) {
+  return value - 1
 }

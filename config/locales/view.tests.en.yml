@@ -24,7 +24,7 @@ en:
       success: "<a href=\"%{url}\" target=_blank title=\"Link to Gist\">Gist</a> create"
       failure: "Gist failure"
     show:
-      header_timer: "Time left"
+      header_timer: "Time left: "
       seconds: "sec"
       submit: "Next question"
       header: "Passage the test"

@@ -9,11 +9,7 @@ class TestsController < ApplicationController
 
   def start
     current_user.tests << @test
-    test_passage = current_user.test_passage(@test)
-    test_passage.timer_limit = @test.timer
-    test_passage.start_time_passage = Time.current
-    test_passage.save
-    redirect_to test_passage
+    redirect_to current_user.test_passage(@test)
   end
 
   private

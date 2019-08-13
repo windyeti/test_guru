@@ -24,7 +24,7 @@ ru:
       success: "<a href=\"%{url}\" target=_blank title=\"ссылка на гист\">Gist</a> создан"
       failure: "Gist не создан"
     show:
-      header_timer: "Осталось времени"
+      header_timer: "Осталось времени: "
       seconds: "сек"
       submit: "Следующий вопрос"
       header: "Прохождение теста"
