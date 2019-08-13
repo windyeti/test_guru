@@ -1,12 +1,14 @@
 class TestPassagesController < ApplicationController
+
   before_action :find_test_passage, only: [:show, :update, :result, :gist]
 
   def show; end
 
-
   def result; end
 
   def update
+    @test_passage.timer_limit = @test_passage.timer_limit - (Time.current - @test_passage.start_time_passage);
+
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?

@@ -1,3 +1,14 @@
+<div class="row justify-content-center p-3 mb-2 bg-secondary text-white">
+  <div class="dddd">
+    <span><%= t('.header_timer') %>: </span>
+    <%= content_tag :span,
+                    @test_passage.timer_limit,
+                    data: { test_passage_id: @test_passage.id },
+                    id: 'timer'
+    %>
+    <span><%= t('.seconds') %></span>
+  </div>
+</div>
 <div class="row justify-content-center pt-3">
   <div class="col-12 col-md-10 col-lg-8">
     <div class="card">
