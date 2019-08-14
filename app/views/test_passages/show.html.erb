@@ -3,7 +3,7 @@
   <% time_rest = @test_passage.test.timer - (@test_passage.updated_at - @test_passage.created_at) %>
   <%= content_tag :span,
                   time_rest.to_i,
-                  data: { time_rest: time_rest, test_passage_id: "#{@test_passage.id}" },
+                  data: { time_rest: time_rest },
                   id: 'timer'
   %>
   <span>&nbsp;<%= t('.seconds') %></span>

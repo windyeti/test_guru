@@ -7,7 +7,8 @@ function testTimer() {
   var timeRest = timer.dataset.timeRest;
   var interval = setInterval(function() {
     timeRest = decrement(timeRest);
-    timer.innerHTML = Math.round(timeRest);
+    var timeRestRound = Math.round(timeRest);
+    timer.innerHTML = timeRestRound >= 0 ? timeRestRound : '--' ;
     if (timeRest <= 0) {
       $("#form_test_passage").submit();
       clearInterval(interval);
