@@ -5,11 +5,9 @@ document.addEventListener('turbolinks:load', function() {
 function testTimer() {
   var timer = document.querySelector('#timer');
   var timeRest = timer.dataset.timeRest;
-  var testPassageId = timer.dataset.testPassageId;
   var interval = setInterval(function() {
     timeRest = decrement(timeRest);
     timer.innerHTML = Math.round(timeRest);
-    // if (timeRest <= 0) window.location.replace('/test_passages/' + testPassageId + '/result');
     if (timeRest <= 0) {
       $("#form_test_passage").submit();
       clearInterval(interval);
