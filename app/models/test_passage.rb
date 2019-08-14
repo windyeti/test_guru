@@ -7,7 +7,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-    self.passed = true if successful?
+    self.passed = true if successful? && has_time
     save!
   end
 
@@ -20,7 +20,7 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || !has_time
   end
 
   def percentage_passage
@@ -33,6 +33,10 @@ class TestPassage < ApplicationRecord
 
   def number_question
     test.questions.index(current_question) + 1
+  end
+
+  def has_time
+    (test.timer - ( updated_at - created_at ) >= 0)
   end
 
   def set_current_question
