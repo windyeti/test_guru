@@ -9,7 +9,7 @@ function testTimer() {
   setInterval(function() {
     timeRest = decrement(timeRest);
     timer.innerHTML = Math.round(timeRest);
-    if (timeRest <= 0) window.location.replace(`/test_passages/${testPassageId}/result`);
+    if (timeRest <= 0) window.location.replace('/test_passages/' + testPassageId + '/result');
     // if (timeRest <= 0) $("#form_test_passage").submit();
   },1000)
 }
