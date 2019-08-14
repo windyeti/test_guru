@@ -6,11 +6,14 @@ function testTimer() {
   var timer = document.querySelector('#timer');
   var timeRest = timer.dataset.timeRest;
   var testPassageId = timer.dataset.testPassageId;
-  setInterval(function() {
+  var interval = setInterval(function() {
     timeRest = decrement(timeRest);
     timer.innerHTML = Math.round(timeRest);
-    if (timeRest <= 0) window.location.replace('/test_passages/' + testPassageId + '/result');
-    // if (timeRest <= 0) $("#form_test_passage").submit();
+    // if (timeRest <= 0) window.location.replace('/test_passages/' + testPassageId + '/result');
+    if (timeRest <= 0) {
+      $("#form_test_passage").submit();
+      clearInterval(interval);
+    }
   },1000)
 }
 
