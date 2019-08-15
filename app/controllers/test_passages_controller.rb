@@ -1,15 +1,16 @@
 class TestPassagesController < ApplicationController
+
   before_action :find_test_passage, only: [:show, :update, :result, :gist]
 
   def show; end
 
-
   def result; end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
+    time_left = @test_passage.has_time
+    @test_passage.accept!(params[:answer_ids], time_left)
 
-    if @test_passage.completed?
+    if @test_passage.completed?(time_left)
       current_user.badges << AwardsService.new(@test_passage).check
       ResultTestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)

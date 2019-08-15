@@ -5,9 +5,9 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_question
 
-  def accept!(answer_ids)
+  def accept!(answer_ids, time_left)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-    self.passed = true if successful?
+    self.passed = true if successful? && time_left
     save!
   end
 
@@ -19,8 +19,8 @@ class TestPassage < ApplicationRecord
     current_question.answers.correct
   end
 
-  def completed?
-    current_question.nil?
+  def completed?(time_left)
+    current_question.nil? || !time_left
   end
 
   def percentage_passage
@@ -33,6 +33,10 @@ class TestPassage < ApplicationRecord
 
   def number_question
     test.questions.index(current_question) + 1
+  end
+
+  def has_time
+    created_at - Time.current + test.timer >= 0
   end
 
   def set_current_question
